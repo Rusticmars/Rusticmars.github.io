@@ -59,6 +59,12 @@ summary small{display:block;font:.85rem/1.4 system-ui,-apple-system,"Segoe UI",s
 .btn:hover{filter:brightness(1.08)}
 footer{padding:2rem 0 3rem;color:var(--muted);font:.85rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;border-top:1px solid var(--line)}
 .scroll-x{overflow-x:auto}
+.roll{height:1.5em;overflow:hidden;line-height:1.5em;font-size:clamp(1.3rem,4vw,1.75rem);color:var(--accent);position:relative}
+.roll .track{display:block;animation:roll 18s ease-in-out infinite}
+.roll .track span{display:block;height:1.5em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes roll{0%,21%{transform:translateY(0)}25%,46%{transform:translateY(-1.5em)}50%,71%{transform:translateY(-3em)}75%,96%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
+@media (prefers-reduced-motion:reduce){.roll{height:auto;overflow:visible}.roll .track{display:none}.roll .sr{position:static;width:auto;height:auto;clip:auto;white-space:normal}}
 </style>
 </head>
 <body>
@@ -75,9 +81,9 @@ footer{padding:2rem 0 3rem;color:var(--muted);font:.85rem/1.5 system-ui,-apple-s
     </defs>
     <rect width="400" height="400" fill="url(#hex)"/>
   </svg>
-  <h1>Nicholas A. Pike, Ph.D.</h1>
-  <p class="sub">Physicist and computational materials scientist</p>
-  <p class="lede">This site explains, in plain language, what it means to calculate the behavior of a material from the laws of quantum mechanics, and what that work has been used to study.</p>
+  <h1>Nicholas A. Pike</h1>
+  <p class="sub roll"><span class="sr">Physicist, Materials Engineer, Chemist, Software Engineer</span><span class="track" aria-hidden="true"><span>Physicist</span><span>Materials Engineer</span><span>Chemist</span><span>Software Engineer</span><span>Physicist</span></span></p>
+  <p class="lede">Every material, from the silicon in a computer chip to the nitride crystals proposed for next-generation memory, owes its behavior to the quantum mechanics of its electrons. This site presents research that predicts that behavior from the atoms alone, spanning magnetism, light, heat, and electric polarization, and explains in plain language what the results mean and why they matter.</p>
   <ul class="stats">
     <li><b>20+</b> peer-reviewed papers</li>
     <li><b>942</b> citations</li>
