@@ -1,15 +1,9 @@
-# Rusticmars.github.io
+# Personal physics website
 
-My portfolio website! Check it out [here](https://Rusticmars.github.io).
+Static site for GitHub Pages.
 
+- index.html: overview page
+- alscn-ferroelectrics.html: detailed explanation of the 2025 Physical Review B paper
+- papers/: PDFs linked from the pages
 
-
-## Screenshots
-
-
-## Author
-
-👤 **Nicholas A Pike**
-
-* LinkedIn: [@Rusticmars](https://www.linkedin.com/in/nicholas-pike-physics)
-* GitHub: [@Rusticmars](https://github.com/Rusticmars)
+To deploy: create a repository, upload the contents of this folder to its root, then enable Pages (Settings, Pages, deploy from the main branch, root folder).

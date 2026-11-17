@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Designing better ferroelectric nitrides | Nicholas A. Pike, Ph.D.</title>
+<meta name="description" content="A detailed, plain-language explanation of first-principles calculations on ferroelectric AlScN, ScGaN, and AlScGaN.">
+<style>
+:root{
+  --bg:#f4f6f5;--surface:#ffffff;--ink:#16222b;--muted:#51606b;--line:#d3dbd8;--accent:#1c6a86;--accent-ink:#ffffff;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#10181e;--surface:#17222a;--ink:#e6eceb;--muted:#9fb0b8;--line:#2a3943;--accent:#6bc0dc;--accent-ink:#0b141a;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#10181e;--surface:#17222a;--ink:#e6eceb;--muted:#9fb0b8;--line:#2a3943;--accent:#6bc0dc;--accent-ink:#0b141a;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "Iowan Old Style","Palatino Linotype",Georgia,serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+.back{display:inline-block;padding:1.25rem 0;font:600 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}
+h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:.5rem 0 .75rem;letter-spacing:-.02em}
+.cite{font:.92rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted);margin:0 0 1.25rem}
+.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 2rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.65rem 1.1rem;border-radius:6px;text-decoration:none;font:600 .95rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif}
+.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.brief{background:var(--surface);border-left:4px solid var(--accent);padding:1rem 1.25rem;margin:0 0 2rem;font-size:1.08rem}
+h2{font-size:1.45rem;line-height:1.25;margin:2.5rem 0 .5rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+h3{font-size:1.1rem;margin:1.5rem 0 .25rem}
+p{margin:0 0 1rem}
+.eq{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.9rem 1.1rem;margin:0 0 1rem;overflow-x:auto;font:1rem/1.7 "Cambria Math","STIX Two Math",Georgia,serif}
+.eq small{display:block;color:var(--muted);font:.88rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;margin-top:.4rem}
+.scroll-x{overflow-x:auto;margin:0 0 1rem}
+table{border-collapse:collapse;width:100%;min-width:30rem;font:.95rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--surface)}
+th,td{padding:.55rem .75rem;border:1px solid var(--line);text-align:left}
+th{color:var(--muted);font-weight:600}
+caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:.85rem;padding:.5rem 0}
+footer{margin-top:3rem;padding:1.5rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font:.85rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="index.html#research">&larr; Back to the overview</a>
+<h1>Designing better ferroelectric nitrides, atom by atom</h1>
+<p class="cite">N.A. Pike, R. Pachter, W.J. Kennedy, N. Glavin. “Understanding the structure and polarization in ferroelectric AlScN, ScGaN, and AlScGaN from first principles calculations.” <em>Physical Review B</em> 112, 085204 (2025).</p>
+<div class="btns">
+  <a class="btn" href="papers/Pike_2025_PRB_112_085204.pdf" download>Download the paper (PDF)</a>
+  <a class="btn alt" href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">View at the publisher (DOI)</a>
+</div>
+
+<p class="brief"><b>In brief.</b> Certain nitride crystals have a built-in electric polarization that can be flipped with a voltage, which makes them candidates for memory that retains data without power. This study used quantum-mechanical calculations to predict how mixing aluminum, scandium, and gallium into nitrogen-based crystals changes their structure and polarization, and to point to mixtures that may switch at lower voltage.</p>
+
+<h2>1. Background</h2>
+<h3>What ferroelectric means</h3>
+<p>In a ferroelectric crystal, the positive and negative charges are arranged so that the material carries a net electric polarization even with no applied field. Applying a sufficiently strong field in the opposite direction flips the polarization, and the material stays in the new state afterward. Two stable states that persist without power can represent a stored bit. The field required to flip the polarization is called the coercive field, <i>E</i><sub>c</sub>; the polarization present without any field is the spontaneous polarization, <i>P</i><sub>sp</sub>.</p>
+<h3>Why these nitrides</h3>
+<p>Thin films of aluminum scandium nitride (AlScN) have drawn attention for next-generation electronics, including non-volatile memory and ferroelectric transistors. Their remnant polarization is reported to range from 80 to 165 µC/cm², they can keep working above 900 °C, and they are compatible with back-end-of-line complementary metal-oxide-semiconductor (CMOS) processing, the stage of chip manufacturing that builds the wiring layers. The drawback is a relatively high coercive field, about two to three times that of hafnium oxide. Because a lower <i>E</i><sub>c</sub> enables lower-power switching, there is strong interest in compositions that reduce it. Experiments have shown that gallium scandium nitride (ScGaN) can have a lower <i>E</i><sub>c</sub> at comparable polarization, and a four-element alloy of aluminum, scandium, gallium, and nitrogen (AlScGaN) has recently been grown.</p>
+<h3>The gap this work addresses</h3>
+<p>Earlier calculations on AlScGaN did not accurately predict where the crystal structure changes, owing to how the simulated alloy cells were generated. Here, cells were generated more rigorously and relaxed fully, and the results were checked against experiments on the simpler two-element-metal alloys before predictions were made for the four-element system.</p>
+
+<h2>2. Method</h2>
+<h3>Simulating a random alloy</h3>
+<p>In a real alloy, the metal atoms are scattered randomly across the available sites. A computer cannot model infinitely many atoms, so the special quasirandom structure (SQS) method was used: it selects a small repeating cell whose local atomic arrangement statistically mimics a random mixture, quantified by the Warren-Cowley short-range order parameters. Because several different cells can share the same parameter, four cells were built for each composition, and results are reported as an average with the standard deviation as the error bar.</p>
+<h3>The quantum calculations</h3>
+<p>Calculations used density functional theory (DFT), as implemented in the Vienna ab initio simulation package (VASP), with the Perdew-Burke-Ernzerhof (PBE) approximation for electron interactions and a correction for van der Waals (vdW) forces, the weak attraction between atoms that are not directly bonded (the D3 parametrization). The study comprised more than 2,000 individual calculations. Energy cutoff was at most 500 eV, and the densest sampling of electron momenta was 12 points per Å. Spin-orbit coupling was omitted because of memory limits on the supercomputers used.</p>
+<h3>Computing polarization and coercive field</h3>
+<p>Polarization was taken as the difference between the ferroelectric wurtzite structure and a nonpolar layered-hexagonal reference structure, related to it by a small displacement of the metal atoms along the <i>z</i> axis (the out-of-plane direction):</p>
+<div class="eq">P<sub>sp</sub> = (e / Ω) Σ<sub>k</sub> Z*<sub>k,zz</sub> Δz<sub>k</sub>, &nbsp; Δz<sub>k</sub> = c/2 − b<sub>M–N</sub> &nbsp;&nbsp;(1)<small>e: elementary charge; Ω: cell volume (Å³); Z*<sub>k,zz</sub>: out-of-plane Born effective charge of metal atom k (units of e), which measures how strongly the atom’s charge responds when it is displaced; Δz<sub>k</sub>: displacement of that atom relative to nitrogen (Å); c: out-of-plane lattice parameter (Å); b<sub>M–N</sub>: metal-nitrogen bond length (Å). The result is converted to µC/cm².</small></div>
+<p>The coercive field was estimated from the energy needed to convert the polar structure into the nonpolar one:</p>
+<div class="eq">E<sub>c</sub> = 2 ΔE n<sub>a</sub> / (P<sub>sp</sub> Ω) &nbsp;&nbsp;(2)<small>ΔE: energy difference per atom between the layered-hexagonal and wurtzite structures (eV); n<sub>a</sub>: number of atoms in the simulation cell; E<sub>c</sub> in MV/cm.</small></div>
+
+<h2>3. Results</h2>
+<h3>Validation on the parent compounds</h3>
+<p>For the pure compounds AlN, ScN, and GaN, calculated lattice parameters agreed with experiment to an average error of 1.2%, and Born effective charges and polarization to an average error of about 5%. Calculated band gaps were underestimated relative to experiment, a known limitation of the level of theory; more advanced methods were beyond the scope of the study.</p>
+<h3>AlScN: where the structure changes</h3>
+<p>As scandium is added, the ferroelectric wurtzite structure becomes unstable relative to a cubic structure. The calculated crossover is at about 40% Sc, compared with experimental values of about 43%, 45%, and 30% to 35%. Earlier calculations that omitted van der Waals forces or used smaller cells placed it near 64% to 67%. The transformation is dominated by a decrease of about 11% in the out-of-plane lattice parameter, with little change in-plane, and is therefore described as displacive, meaning that it arises from atoms shifting rather than being rearranged. Polarization decreases with scandium content mainly because of that shrinking lattice parameter, and calculated coercive fields agree well with measurements.</p>
+<h3>ScGaN: a different route</h3>
+<p>The calculated structural transformation in ScGaN occurs at 44.1%, against an experimental value of 46%. Unlike AlScN, it involves both in-plane and out-of-plane changes of the lattice. Calculated polarization agrees well with experiment for compositions below 50%.</p>
+<h3>AlScGaN: a map of the four-element system</h3>
+<p>Calculating many compositions across the full range produced ternary composition maps of bond lengths, band gaps, lattice parameters, polarization, and coercive field, along with a predicted zero-temperature phase diagram. The calculated structural boundary runs close to a straight line connecting the AlScN and ScGaN transformation points. For one composition grown experimentally, the comparison is as follows:</p>
+<div class="scroll-x"><table>
+<caption>Comparison for compositions near Al<sub>0.45</sub>Sc<sub>0.20</sub>Ga<sub>0.35</sub>N. Measured values are from the experimental study cited in the paper.</caption>
+<thead><tr><th>Property</th><th>Measured</th><th>Calculated (Al<sub>0.46</sub>Sc<sub>0.24</sub>Ga<sub>0.30</sub>N)</th><th>Calculated (Al<sub>0.41</sub>Sc<sub>0.20</sub>Ga<sub>0.39</sub>N)</th></tr></thead>
+<tbody>
+<tr><td>Out-of-plane lattice parameter (Å)</td><td>5.02</td><td>5.10</td><td>5.19</td></tr>
+<tr><td>Spontaneous polarization (µC/cm²)</td><td>about 150</td><td>137</td><td>144</td></tr>
+<tr><td>Coercive field (MV/cm)</td><td>about 5.5</td><td>15.6</td><td>20.0</td></tr>
+</tbody></table></div>
+<p>Lattice parameters and polarization are in good agreement. The calculated coercive field is substantially higher than the measured value, which the authors attribute to approximations in the prediction. Even so, trends across composition can be discerned, and the calculations identify a large region near the structural transformation line where polarization is near 100 µC/cm² and the coercive field is at or below about 5 MV/cm.</p>
+
+<h2>4. What this means</h2>
+<p>The study shows that a first-principles approach, with van der Waals forces and carefully generated random-alloy cells, reproduces measured structure and polarization in the two-metal alloys. Including van der Waals forces proved important for the out-of-plane lattice parameter, and therefore for polarization. For the four-element alloy, the results suggest where experimentalists might look for materials combining strong polarization with a reduced coercive field, which would support lower-power memory and radio-frequency devices.</p>
+
+<h2>5. Limitations</h2>
+<p>The phase diagram is for zero temperature. Cell sizes were limited by computer memory, spin-orbit coupling was omitted, and band gaps are underestimated. Absolute coercive fields for the four-element alloy are overestimated relative to the one available measurement, so the maps are best read as guides to trends rather than as predictions of exact values. The data are available from the authors on reasonable request.</p>
+
+<footer>Published in <em>Physical Review B</em> 112, 085204 (2025). This page is an explanatory summary for general readers; the paper is the authoritative account. <a href="index.html#research">Back to the overview</a>.</footer>
+</div>
+</body>
+</html>
