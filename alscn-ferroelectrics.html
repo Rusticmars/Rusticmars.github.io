@@ -5,40 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Designing better ferroelectric nitrides | Nicholas A. Pike, Ph.D.</title>
 <meta name="description" content="A detailed, plain-language explanation of first-principles calculations on ferroelectric AlScN, ScGaN, and AlScGaN.">
-<style>
-:root{
-  --bg:#f4f6f5;--surface:#ffffff;--ink:#16222b;--muted:#51606b;--line:#d3dbd8;--accent:#1c6a86;--accent-ink:#ffffff;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#10181e;--surface:#17222a;--ink:#e6eceb;--muted:#9fb0b8;--line:#2a3943;--accent:#6bc0dc;--accent-ink:#0b141a;color-scheme:dark}
-}
-:root[data-theme="dark"]{--bg:#10181e;--surface:#17222a;--ink:#e6eceb;--muted:#9fb0b8;--line:#2a3943;--accent:#6bc0dc;--accent-ink:#0b141a;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.7 "Iowan Old Style","Palatino Linotype",Georgia,serif}
-a{color:var(--accent);text-underline-offset:3px}
-a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
-.back{display:inline-block;padding:1.25rem 0;font:600 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}
-h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:.5rem 0 .75rem;letter-spacing:-.02em}
-.cite{font:.92rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted);margin:0 0 1.25rem}
-.btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 2rem}
-.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:.65rem 1.1rem;border-radius:6px;text-decoration:none;font:600 .95rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif}
-.btn.alt{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-.brief{background:var(--surface);border-left:4px solid var(--accent);padding:1rem 1.25rem;margin:0 0 2rem;font-size:1.08rem}
-h2{font-size:1.45rem;line-height:1.25;margin:2.5rem 0 .5rem;padding-top:1.5rem;border-top:1px solid var(--line)}
-h3{font-size:1.1rem;margin:1.5rem 0 .25rem}
-p{margin:0 0 1rem}
-.eq{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.9rem 1.1rem;margin:0 0 1rem;overflow-x:auto;font:1rem/1.7 "Cambria Math","STIX Two Math",Georgia,serif}
-.eq small{display:block;color:var(--muted);font:.88rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;margin-top:.4rem}
-.scroll-x{overflow-x:auto;margin:0 0 1rem}
-table{border-collapse:collapse;width:100%;min-width:30rem;font:.95rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--surface)}
-th,td{padding:.55rem .75rem;border:1px solid var(--line);text-align:left}
-th{color:var(--muted);font-weight:600}
-caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:.85rem;padding:.5rem 0}
-footer{margin-top:3rem;padding:1.5rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font:.85rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-</style>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/paper.css">
 </head>
 <body>
 <div class="wrap">
@@ -46,8 +14,8 @@ footer{margin-top:3rem;padding:1.5rem 0 3rem;border-top:1px solid var(--line);co
 <h1>Designing better ferroelectric nitrides, atom by atom</h1>
 <p class="cite">N.A. Pike, R. Pachter, W.J. Kennedy, N. Glavin. “Understanding the structure and polarization in ferroelectric AlScN, ScGaN, and AlScGaN from first principles calculations.” <em>Physical Review B</em> 112, 085204 (2025).</p>
 <div class="btns">
-  <a class="btn" href="papers/Pike_2025_PRB_112_085204.pdf" download>Download the paper (PDF)</a>
-  <a class="btn alt" href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">View at the publisher (DOI)</a>
+  <a class="btn" href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">View the paper at the publisher (DOI)</a>
+  <a class="btn alt" href="#request">Request a copy</a>
 </div>
 
 <p class="brief"><b>In brief.</b> Certain nitride crystals have a built-in electric polarization that can be flipped with a voltage, which makes them candidates for memory that retains data without power. This study used quantum-mechanical calculations to predict how mixing aluminum, scandium, and gallium into nitrogen-based crystals changes their structure and polarization, and to point to mixtures that may switch at lower voltage.</p>
@@ -96,7 +64,23 @@ footer{margin-top:3rem;padding:1.5rem 0 3rem;border-top:1px solid var(--line);co
 <h2>5. Limitations</h2>
 <p>The phase diagram is for zero temperature. Cell sizes were limited by computer memory, spin-orbit coupling was omitted, and band gaps are underestimated. Absolute coercive fields for the four-element alloy are overestimated relative to the one available measurement, so the maps are best read as guides to trends rather than as predictions of exact values. The data are available from the authors on reasonable request.</p>
 
+<h2 id="request">Request a copy</h2>
+<p>Enter your details and a copy of this paper will be sent to you. Details are used only to reply and are processed through the Web3Forms service.</p>
+<form class="req" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="27a0e836-99df-4589-aebd-900f647e8ccb">
+  <input type="hidden" name="subject" value="Paper request: Understanding the Structure and Polarization in Ferroelectric AlScN, ScGaN, and AlScGaN (Physical Review B, 2025)">
+  <input type="hidden" name="paper" value="Understanding the Structure and Polarization in Ferroelectric AlScN, ScGaN, and AlScGaN (Physical Review B, 2025)">
+  <input type="hidden" name="from_name" value="Personal website paper request">
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+  <label>Name<input name="name" required autocomplete="name"></label>
+  <label>Email<input type="email" name="email" required autocomplete="email"></label>
+  <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
+  <button class="btn" type="submit">Send request</button>
+  <p class="status" role="status" aria-live="polite"></p>
+</form>
+
 <footer>Published in <em>Physical Review B</em> 112, 085204 (2025). This page is an explanatory summary for general readers; the paper is the authoritative account. <a href="index.html#research">Back to the overview</a>.</footer>
 </div>
+<script src="assets/form.js"></script>
 </body>
 </html>

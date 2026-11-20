@@ -1,0 +1,50 @@
+/* Overview page only */
+html{scroll-behavior:smooth}
+nav{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;padding:1.25rem 0;font:600 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--accent)}
+.hero{position:relative;padding:3.5rem 0 3rem;overflow:hidden}
+.hero svg{position:absolute;right:-60px;top:0;width:min(520px,95%);height:100%;opacity:.16;pointer-events:none}
+.hero>*{position:relative}
+h1{font-size:clamp(2.4rem,7vw,3.9rem);line-height:1.05;margin:0 0 .6rem;font-weight:700;letter-spacing:-.02em}
+.sub{font:500 1.15rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted);margin:0 0 1.5rem;max-width:34rem}
+.lede{font-size:1.2rem;max-width:36rem;margin:0 0 1.5rem}
+.stats{display:flex;flex-wrap:wrap;gap:.5rem 2rem;font:.95rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted);margin:0;padding:0;list-style:none}
+.stats b{color:var(--ink);font-size:1.15rem}
+section{padding:2.5rem 0;border-top:1px solid var(--line)}
+h2{font-size:1.7rem;line-height:1.2;margin:0 0 .5rem;letter-spacing:-.01em}
+h3{font-size:1.1rem;margin:0}
+.intro{color:var(--muted);margin:0 0 1.5rem}
+
+/* Research topics */
+details{background:var(--surface);border:1px solid var(--line);border-radius:6px;margin:0 0 .75rem}
+summary{cursor:pointer;padding:1rem 1.1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:600 1.4rem/1 system-ui,sans-serif;color:var(--accent);flex:none}
+details[open] summary::after{content:"\2212"}
+summary small{display:block;font:.85rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted);margin-top:.15rem;font-weight:400}
+.body{padding:0 1.1rem 1.1rem}
+.body p{margin:0 0 .8rem}
+.body p:last-child{margin:0}
+.tag{font:600 .85rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--accent)}
+
+/* Publications and career timeline */
+.pubs{list-style:none;margin:0;padding:0}
+.pubs li{padding:1rem 0;border-bottom:1px solid var(--line)}
+.pubs li:last-child{border:0}
+.pubs em{color:var(--muted)}
+.tl{margin:0;padding:0;list-style:none}
+.tl li{display:grid;grid-template-columns:8.5rem 1fr;gap:.25rem 1.25rem;padding:.7rem 0;font-size:1rem}
+.tl .yr{font:600 .88rem/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted)}
+.tl .org{color:var(--muted);font-size:.95rem}
+@media (max-width:34rem){.tl li{grid-template-columns:1fr}}
+
+footer{padding:2rem 0 3rem;color:var(--muted);font:.85rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;border-top:1px solid var(--line)}
+
+/* Rolling titles under the name */
+.roll{height:1.5em;overflow:hidden;line-height:1.5em;font-size:clamp(1.3rem,4vw,1.75rem);color:var(--accent);position:relative}
+.roll .track{display:block;animation:roll 18s ease-in-out infinite}
+.roll .track span{display:block;height:1.5em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes roll{0%,21%{transform:translateY(0)}25%,46%{transform:translateY(-1.5em)}50%,71%{transform:translateY(-3em)}75%,96%{transform:translateY(-4.5em)}100%{transform:translateY(-6em)}}
+@media (prefers-reduced-motion:reduce){.roll{height:auto;overflow:visible}.roll .track{display:none}.roll .sr{position:static;width:auto;height:auto;clip:auto;white-space:normal}}
