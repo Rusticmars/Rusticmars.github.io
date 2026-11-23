@@ -20,4 +20,4 @@ Upload the contents of this folder to the root of the repository, keeping the fo
 ## Adding a paper
 
 1. Copy an existing folder under research/, rename it, and edit the text and the form's title fields.
-2. Add its summary and links to index.html (research list, publications list, and the request drop-down).
+2. Add its summary, as a topic under the matching theme, to index.html (research themes: ferroelectrics, optics, magnetism, thermal, software), plus its entry in the publications list and the request drop-down.
