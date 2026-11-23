@@ -104,6 +104,14 @@
       <p>Atomically thin crystals can also change the color of light. In second-harmonic generation, a material converts light of one frequency into light of exactly twice that frequency, an effect that requires a crystal lacking a certain symmetry, as single-layer transition-metal dichalcogenides do. Measured values vary widely, so a 2021 study calculated the response from first principles for nine monolayers. The calculated peak positions agree with experiment to about 8% on average, the strongest responses occur in materials with small band gaps (the vanadium compounds), and the magnitudes are comparable to those of bulk crystals used in devices today, which suggests that much thinner components may be possible. <a href="tmd-nonlinear-optics.html">Read the detailed explanation</a>.</p>
     </div>
   </details>
+
+  <details>
+    <summary><span><h3>Open-source software: Raman spectra from ABINIT output</h3><small>Personal project, MIT license</small></span></summary>
+    <div class="body">
+      <p>A Raman spectrum records how light scatters from a material’s vibrations. ABINIT’s anaddb program calculates the underlying tensors, but its text output must still be converted into spectra. Raman_spec is a small Python tool that does so, producing per-mode intensities, polarization-resolved channels, depolarization ratios, and a broadened spectrum ready for plotting.</p>
+      <p>It was checked against an ABINIT calculation on wurtzite aluminum nitride (AlN), reproducing ABINIT’s own tensor invariants and giving calculated frequencies within about 5% of experiment. <a href="raman-spectra-tool.html">Read the detailed explanation</a> or <a href="https://github.com/Rusticmars/Raman_Spectra" rel="noopener">view the code on GitHub</a>.</p>
+    </div>
+  </details>
 </section>
 
 <section id="publications">

@@ -18,3 +18,5 @@ th{color:var(--muted);font-weight:600}
 caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:.85rem;padding:.5rem 0}
 .req{margin-top:1.25rem}
 footer{margin-top:3rem;padding:1.5rem 0 3rem;border-top:1px solid var(--line);color:var(--muted);font:.85rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+pre{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.9rem 1.1rem;overflow-x:auto;font:.9rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;margin:0 0 1rem}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
