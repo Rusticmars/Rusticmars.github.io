@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raman_spec: turning ABINIT output into Raman spectra | Nicholas A. Pike</title>
+<meta name="description" content="An open-source Python tool that converts ABINIT anaddb output into Raman spectra, explained.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/paper.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<nav class="site-nav" aria-label="Primary">
+  <a class="home" href="../../">Nicholas A. Pike</a>
+  <a href="../../#research">Research</a>
+  <a href="../../#software" aria-current="page">Software</a>
+  <a href="../../#publications">Publications</a>
+  <a href="../../#path">Career</a>
+  <a href="../../#contact">Contact</a>
+</nav>
+<main id="main">
+<h1>Raman_spec: turning ABINIT output into Raman spectra</h1>
+<p class="cite">Open-source Python software for post-processing Raman calculations from the ABINIT electronic-structure package. MIT license.</p>
+<div class="btns">
+  <a class="btn" href="https://github.com/Rusticmars/Raman_Spectra" rel="noopener">View the code on GitHub</a>
+  <a class="btn alt" href="../../research/abinit-overview/">About ABINIT</a>
+</div>
+
+<p class="brief"><b>In brief.</b> A Raman spectrum is a fingerprint of how a material vibrates. ABINIT can calculate the quantities that determine it, but they arrive as raw tensors in a text file. Raman_spec reads that file and produces, for every vibrational mode, the intensity, polarization-resolved signals, and depolarization ratio, together with a broadened spectrum ready for plotting.</p>
+
+<h2>1. Background</h2>
+<p>In Raman spectroscopy, light scatters from a material and a small fraction loses or gains the energy of a vibration. The resulting spectrum, a set of peaks at the frequencies of the Raman-active vibrations, identifies a material and reveals its structure, strain, and defects. Predicting such spectra requires the frequencies of the vibrations and a Raman tensor for each, a 3×3 table describing how the material’s response to light changes as the atoms move (see <a href="../../research/abinit-overview/">the ABINIT page</a> for how these are computed). ABINIT’s <code>anaddb</code> program writes them to a text file. Raman_spec is the next step: it converts those tensors into the quantities that can be compared with a measured spectrum.</p>
+
+<h2>2. What the tool does</h2>
+<p><b>Input.</b> The text output of an <code>anaddb</code> run with the nonlinear flag enabled, plus a short plain-text input file that sets the laser energy, the temperature, the line broadening, and the output units. The laser may be specified as a wavelength (for example, 532 nm) or as an energy. No ABINIT installation is needed.</p>
+<pre>filename   anaddb.out
+temp       300.0
+laser_freq 532.0 nm
+spread     2.0 cm-1
+n_freq     400
+outname    aln
+relative_intensity</pre>
+<p><b>Output.</b> Plain columnar text files: a broadened spectrum with the powder average and six fixed-polarization channels (XX, XY, XZ, YY, YZ, ZZ), or, with broadening switched off, one row of intensities per mode. A log file records each mode’s tensor, depolarization ratio, Raman activity, and theoretical cross-section, with a ranked list of the ten strongest modes. Nothing is plotted automatically, so any plotting tool can be used. Separate spectra are written for the transverse (TO) and each longitudinal (LO) direction.</p>
+<p><b>Use.</b> The tool runs from the command line (<code>python Raman_spec.py raman.in</code>) or as a Python module whose individual functions can be called directly. It requires Python 3.8 or later with NumPy and SciPy.</p>
+
+<h2>3. The physics</h2>
+<p>For each mode, the Raman tensor <b>m</b> is split into its symmetric part <b>s</b> = (<b>m</b> + <b>m</b><sup>T</sup>)/2 and antisymmetric part <b>a</b> = (<b>m</b> − <b>m</b><sup>T</sup>)/2, from which three rotational invariants are formed. These match the convention that ABINIT itself prints, so results can be checked against the source file:</p>
+<div class="eq">G<sub>0</sub> = (1/3) [Tr(<b>m</b>)]², &nbsp; G<sub>1</sub> = Σ<sub>ij</sub> a<sub>ij</sub>², &nbsp; G<sub>2</sub> = Σ<sub>ij</sub> s<sub>ij</sub>² − (1/3) [Tr(<b>m</b>)]² &nbsp;&nbsp;(1)<small>G<sub>0</sub>: isotropic, G<sub>1</sub>: antisymmetric, G<sub>2</sub>: symmetric anisotropic invariants; <b>m</b>: Raman tensor of the mode, a 3×3 matrix (dimensionless in the units anaddb writes); Tr: trace; i, j: Cartesian indices.</small></div>
+<p>The powder-averaged intensity, appropriate to a polycrystalline sample or fine powder, follows from Placzek’s approximation as the sum of two scattering geometries:</p>
+<div class="eq">I<sub>∥</sub> = 2π P (10 G<sub>0</sub> + 4 G<sub>2</sub>), &nbsp; I<sub>⊥</sub> = 2π P (5 G<sub>1</sub> + 3 G<sub>2</sub>), &nbsp; I<sub>powder</sub> = I<sub>∥</sub> + I<sub>⊥</sub> &nbsp;&nbsp;(2)<small>P: prefactor defined in Eq. (3); I<sub>∥</sub> and I<sub>⊥</sub>: intensities with parallel and perpendicular polarization of the scattered light (arbitrary units).</small></div>
+<div class="eq">P = (1 / 2ω<sub>m</sub>) · (ω<sub>L</sub> − ω<sub>m</sub>)⁴ / c⁴ · [n(ω<sub>m</sub>, T) + 1] &nbsp;&nbsp;(3)<small>ω<sub>m</sub>: mode frequency; ω<sub>L</sub>: incident photon frequency; ω<sub>L</sub> − ω<sub>m</sub>: frequency of the Stokes-scattered photon; c: speed of light; n: Bose-Einstein occupation of the mode at temperature T (K). Evaluated in Hartree atomic units.</small></div>
+<p>The depolarization ratio, ρ = I<sub>⊥</sub>/I<sub>∥</sub> = (5G<sub>1</sub> + 3G<sub>2</sub>) / (10G<sub>0</sub> + 4G<sub>2</sub>), indicates how strongly a mode changes the polarization of the light: it is 0 for a purely isotropic tensor and 3/4 for a symmetric, traceless one. Each mode is then drawn as a Lorentzian line of a chosen half-width to produce the spectrum. The tool also reports a theoretical Stokes cross-section for each mode, a thermal (Einstein-oscillator) heat capacity and entropy, and, if a broadening is given, a quality factor and lifetime treating that broadening as the mode’s damping.</p>
+
+<h2>4. Validation</h2>
+<p>The tool was checked against an ABINIT calculation on wurtzite aluminum nitride (AlN), which has 12 modes of which 7 are Raman-active. Its invariants G<sub>0</sub> and G<sub>2</sub> reproduce those printed by <code>anaddb</code> for every active mode, to the precision of the tensors in the file. Depolarization ratios behave as theory requires: the fully symmetric A<sub>1</sub>(TO) mode at 601.26 cm<sup>−1</sup> gives ρ = 0.7479, just below 3/4 because of its small isotropic component, and each doubly degenerate E mode gives exactly 0.7500.</p>
+<div class="scroll-x"><table>
+<caption>Calculated mode frequencies for wurtzite AlN against experiment, as listed in the repository’s documentation. The repository pairs them in the order shown.</caption>
+<thead><tr><th>Calculated (cm<sup>−1</sup>)</th><th>Experimental (cm<sup>−1</sup>)</th><th>Experimental mode</th></tr></thead>
+<tbody>
+<tr><td>237.54</td><td>249</td><td>E<sub>2</sub>(low)</td></tr>
+<tr><td>601.26</td><td>611</td><td>A<sub>1</sub>(TO)</td></tr>
+<tr><td>643.89</td><td>671</td><td>E<sub>1</sub>(TO)</td></tr>
+<tr><td>655.76</td><td>657</td><td>E<sub>2</sub>(high)</td></tr>
+</tbody></table></div>
+<p>The calculated frequencies lie within about 5% of the measured values, a typical level of agreement for density functional theory.</p>
+
+<h2>5. Limitations</h2>
+<p>The antisymmetric invariant G<sub>1</sub> is implemented but not validated against reference data, because every tensor encountered so far has been symmetric, as non-resonant Raman tensors are. The seven intensity columns do not share one absolute scale: the factor 2π applies to the powder channel only, so powder-to-powder and channel-to-channel comparisons are meaningful but the ratio between the powder column and a single polarization column is not. Absolute cross-sections carry no empirical calibration and inherit the approximations of the underlying density-functional Raman tensor, so they are first-principles estimates. The quality factor and lifetime are only as meaningful as the broadening the user supplies. The calculation-type option is accepted but currently selects no alternative behavior, and only the text output of <code>anaddb</code> is read, not NetCDF files.</p>
+
+<h2>6. Using and citing it</h2>
+<p>The code is public under the MIT license. Work that uses it should cite ABINIT and <code>anaddb</code> for the underlying Raman susceptibilities, alongside the repository.</p>
+
+</main>
+<footer>Source: <a href="https://github.com/Rusticmars/Raman_Spectra" rel="noopener">github.com/Rusticmars/Raman_Spectra</a>. This page summarizes the repository’s documentation for general readers; the repository is the authoritative account. <a href="../../#research">Back to the overview</a>.</footer>
+</div>
+</body>
+</html>

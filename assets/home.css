@@ -1,8 +1,5 @@
 /* Overview page only */
 html{scroll-behavior:smooth}
-nav{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;padding:1.25rem 0;font:600 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
-nav a{color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--accent)}
 .hero{position:relative;padding:3.5rem 0 3rem;overflow:hidden}
 .hero svg{position:absolute;right:-60px;top:0;width:min(520px,95%);height:100%;opacity:.16;pointer-events:none}
 .hero>*{position:relative}

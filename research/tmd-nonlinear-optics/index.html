@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How atomically thin crystals double the frequency of light | Nicholas A. Pike</title>
+<meta name="description" content="A detailed, plain-language explanation of first-principles calculations of second-order nonlinear optical properties in monolayer transition-metal dichalcogenides.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="stylesheet" href="../../assets/paper.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<nav class="site-nav" aria-label="Primary">
+  <a class="home" href="../../">Nicholas A. Pike</a>
+  <a href="../../#research" aria-current="page">Research</a>
+  <a href="../../#software">Software</a>
+  <a href="../../#publications">Publications</a>
+  <a href="../../#path">Career</a>
+  <a href="../../#contact">Contact</a>
+</nav>
+<main id="main">
+<h1>How atomically thin crystals double the frequency of light</h1>
+<p class="cite">N.A. Pike, R. Pachter. “Second-Order Nonlinear Optical Properties of Monolayer Transition-Metal Dichalcogenides by Computational Analysis.” <em>The Journal of Physical Chemistry C</em> 125, 11075–11084 (2021).</p>
+<div class="btns">
+  <a class="btn" href="https://doi.org/10.1021/acs.jpcc.1c02380" rel="noopener">View the paper at the publisher (DOI)</a>
+  <a class="btn alt" href="#request">Request a copy</a>
+</div>
+
+<p class="brief"><b>In brief.</b> Crystals only a single layer thick can convert light of one color into light of exactly twice the frequency, and can change their refractive index when a voltage is applied. Measurements of these effects disagree widely, so this study calculated them from quantum mechanics for nine monolayer materials. The results are of comparable magnitude to bulk crystals used in devices today, which suggests that much thinner components may be possible.</p>
+
+<h2>1. Background</h2>
+<h3>Nonlinear optics</h3>
+<p>In everyday optics, a material responds to light in proportion to the light’s strength. Intense light can also produce responses that are not proportional. The simplest of these is second-harmonic generation (SHG): two photons of energy ħω are absorbed and one photon of energy 2ħω is emitted, so the output light has twice the frequency of the input. (Frequency doubling is how many green laser pointers work, converting infrared light.) A related effect, the Pockels effect, is a change in a material’s refractive index in proportion to an applied electric field, and is the basis for electro-optic modulators that encode signals onto light.</p>
+<p>Both effects are described by a second-order susceptibility, written χ<sup>(2)</sup>, and both require a crystal that lacks inversion symmetry (a crystal that looks the same when every point is reflected through its center cannot show them).</p>
+<h3>Why monolayer transition-metal dichalcogenides</h3>
+<p>Transition-metal dichalcogenides (TMDs) are layered crystals with the formula MX<sub>2</sub>, in which a plane of transition-metal atoms (M) lies between two planes of chalcogen atoms (X = sulfur, selenium, or tellurium). A single layer has the required lack of inversion symmetry. Its symmetry group (D<sub>3h</sub>) leaves a single independent nonzero component of χ<sup>(2)</sup>. Group VI TMDs (M = molybdenum or tungsten) are semiconductors whose SHG has been measured many times. Group V TMDs (M = vanadium or niobium) range from metallic to semiconducting and had no known SHG measurements. Reported values for the same material vary considerably, depending on the number of layers, defects, the substrate, and the method used to extract χ<sup>(2)</sup> from the measured signal. A first-principles reference, free of those complications, was therefore needed.</p>
+
+<h2>2. Method</h2>
+<p>Calculations used the open-source ABINIT software. Atomic structures were relaxed using density functional theory (DFT), with the Perdew-Burke-Ernzerhof (PBE) approximation plus the D3 van der Waals correction, and at least 20 Å of vacuum separated periodic copies of the single layer. Optical properties were computed from the electronic band structure following the band-theory formalism of Sipe and co-workers, in which the nonlinear response is the sum of three contributions (interband, intraband, and current terms), evaluated as a function of photon energy.</p>
+<p>Because periodic calculations add vacuum, the cell volume is artificially large; results were corrected by the ratio of bulk to monolayer cell volumes (a factor φ) so that susceptibilities can be compared with experiments. The Pockels coefficient was obtained from the electro-optic susceptibility together with the calculated refractive index.</p>
+
+<h2>3. Results</h2>
+<h3>Structures, gaps, and magnetism</h3>
+<p>Calculated lattice parameters agree with other DFT calculations to 0.5% on average and with available experiments to about 1%. The group VI materials have direct gaps, except WSe<sub>2</sub>, which is indirect, in agreement with experiments attributing the change to small residual stress. Among the group V materials, NbS<sub>2</sub>, VS<sub>2</sub>, and VSe<sub>2</sub> are predicted to be magnetic semiconductors, and NbSe<sub>2</sub> a semimetal.</p>
+<h3>Comparison with other calculations and with experiment</h3>
+<div class="scroll-x"><table>
+<caption>Agreement of calculated χ<sup>(2)</sup> spectra with other work. Peak-position errors refer to the energy at which the response peaks.</caption>
+<thead><tr><th>Comparison</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Other first-principles calculations (Mo and W compounds)</td><td>Reasonable to excellent agreement in peak positions and overall magnitude</td></tr>
+<tr><td>Measured MoS<sub>2</sub> (two studies)</td><td>Peak positions within 7%</td></tr>
+<tr><td>Measured MoSe<sub>2</sub>, MoTe<sub>2</sub>, WSe<sub>2</sub></td><td>Peak positions within 20%</td></tr>
+<tr><td>All experimental peak positions, averaged</td><td>About 8% error</td></tr>
+</tbody></table></div>
+<p>The magnitudes are a different matter. The calculated χ<sup>(2)</sup> is larger than most experimental values, and the measurements themselves disagree considerably with one another. The study attributes much of this spread to how experiments extract the susceptibility: the model for the film, the substrate’s optical properties, and the assumed thickness of a layer one atom thick. Without the volume correction, the calculated values decrease, so the treatment of the vacuum also matters.</p>
+<h3>Trends and their origin</h3>
+<p>For a given transition metal, the susceptibility is largest when the chalcogen atom is largest. A larger atom enlarges the lattice, flattens the electronic bands, and lowers the band gap. The nonlinear response is strongest where pairs of bands run parallel with opposite slopes, because the energy separating such bands produces peaks in the spectrum. Smaller gaps and flatter bands thus both raise the response. This is consistent with a recently reported theoretical upper limit on χ<sup>(2)</sup> that scales inversely with the fourth power of the band gap: the vanadium compounds, with the smallest gaps, show the largest susceptibilities, and VSe<sub>2</sub> peaks at lower energy than the other monolayers. MoTe<sub>2</sub> has a susceptibility of the same order as bulk gallium arsenide (GaAs), a standard nonlinear crystal.</p>
+<h3>The Pockels effect</h3>
+<p>For the group VI monolayers, the calculated Pockels coefficient is roughly constant below the band gap and rises, approximately linearly, near the gap, with values equal to or larger than GaAs at low energies (GaAs: 1.86 pm/V at 1.413 eV). The vanadium compounds have larger coefficients that vary nonlinearly below 1 eV, and the niobium compounds have smaller ones. A coefficient that is constant over a range of photon energies could be useful for electro-optical devices in the near-infrared.</p>
+
+<h2>4. What this means</h2>
+<p>If a one-atom-thick crystal responds as strongly as a bulk crystal, an optical component could be made far thinner, allowing smaller electro-optic devices. The calculations also point experimentalists toward unexplored materials, in particular the vanadium compounds, whose strong response occurs at lower energies than in MoS<sub>2</sub>, and, being magnetic, may support combined electro-optical and magnetic functions.</p>
+
+<h2>5. Limitations</h2>
+<p>The calculations use an independent-particle picture and omit excitons, the bound electron-hole pairs that matter in monolayers; many-body calculations that include them were beyond the scope of the study. No correction was applied to the band gaps. Spin-orbit coupling was included in the band structures and linear optical response but not in the matrix elements for the nonlinear response, and convergence of the second-order response was limited by computer memory. For the metallic compounds the results are a first approximation, and the group V compounds were assumed to have the hexagonal ground state. Magnetic order was assumed to be ferromagnetic. Finally, because experimental values vary so widely, the comparison validates peak positions and trends more than absolute magnitudes. The Supporting Information is available from the publisher.</p>
+
+<h2 id="request">Request a copy</h2>
+<p>Enter your details and a copy of this paper will be sent to you. Details are used only to reply and are processed through the Web3Forms service.</p>
+<form class="req" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="27a0e836-99df-4589-aebd-900f647e8ccb">
+  <input type="hidden" name="subject" value="Paper request: Second-Order Nonlinear Optical Properties of Monolayer Transition-Metal Dichalcogenides by Computational Analysis (J. Phys. Chem. C, 2021)">
+  <input type="hidden" name="paper" value="Second-Order Nonlinear Optical Properties of Monolayer Transition-Metal Dichalcogenides by Computational Analysis (J. Phys. Chem. C, 2021)">
+  <input type="hidden" name="from_name" value="Personal website paper request">
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+  <label>Name<input name="name" required autocomplete="name"></label>
+  <label>Email<input type="email" name="email" required autocomplete="email"></label>
+  <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
+  <button class="btn" type="submit">Send request</button>
+  <p class="status" role="status" aria-live="polite"></p>
+</form>
+
+</main>
+<footer>Published in <em>The Journal of Physical Chemistry C</em> 125, 11075–11084 (2021). This page is an explanatory summary for general readers; the paper is the authoritative account. <a href="../../#research">Back to the overview</a>.</footer>
+</div>
+<script src="../../assets/form.js"></script>
+</body>
+</html>

@@ -9,9 +9,11 @@
 <link rel="stylesheet" href="assets/home.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
-<nav aria-label="Primary"><a href="#research">Research explained</a><a href="#publications">Publications</a><a href="#path">Career path</a><a href="#contact">Contact</a></nav>
+<nav class="site-nav" aria-label="Primary"><a href="#research">Research</a><a href="#software">Software</a><a href="#publications">Publications</a><a href="#path">Career</a><a href="#contact">Contact</a></nav>
 
+<main id="main">
 <header class="hero">
   <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
     <defs>
@@ -80,7 +82,7 @@
     <div class="body">
       <p>Transition-metal dichalcogenides (TMDs) are layered crystals that can be separated into sheets a single layer thick. Their properties change markedly between one layer and many.</p>
       <p>This work used first-principles calculations to determine their dielectric and vibrational properties, and extended the open-source ABINIT software so that it can analyze Raman spectra (the pattern of light scattered by a material’s vibrations, which serves as a fingerprint of its structure) and nonlinear optical properties.</p>
-      <p>The ABINIT software itself is described in a 2020 community overview paper with 43 authors, of whom Nicholas A. Pike is one. <a href="abinit-overview.html">Read the detailed explanation</a>.</p>
+      <p>The ABINIT software itself is described in a 2020 community overview paper with 43 authors, of whom Nicholas A. Pike is one. <a href="research/abinit-overview/">Read the detailed explanation</a>.</p>
       
     </div>
   </details>
@@ -98,18 +100,18 @@
     <div class="body">
       <p>A ferroelectric material has a built-in electric polarization that can be flipped by applying a voltage. Because the flipped state persists without power, ferroelectrics are candidates for non-volatile memory. Compounds of aluminum, scandium, gallium, and nitrogen are of particular interest, but the voltage needed to flip them (the coercive field) is relatively high, and lowering it would allow lower-power switching.</p>
       <p>Using more than 2,000 first-principles calculations, a 2025 study predicted where these crystals change structure as the mixture is varied, to within a few percent of experiment for the two-metal alloys. It also mapped the four-element alloy and identified a region of compositions with strong polarization (near 100 µC/cm²) and a reduced coercive field (at or below about 5 MV/cm), as a guide for experimental growth. The calculated coercive field for the one composition that can be checked against experiment was higher than measured, so the maps indicate trends rather than exact values.</p>
-      <p><a href="alscn-ferroelectrics.html">Read the detailed explanation</a> or <a href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">view the paper at the publisher</a>.</p>
+      <p><a href="research/alscn-ferroelectrics/">Read the detailed explanation</a> or <a href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">view the paper at the publisher</a>.</p>
       <p>Optoelectronic materials interact with light to produce or respond to electrical signals. Whether the gap between a material’s electron energy levels is “direct” or “indirect” strongly affects how efficiently it can emit or absorb light. In the layered semiconductor indium selenide (InSe), the gap switches from indirect to direct as layers are added.</p>
-      <p>A 2024 study combining quantum-mechanical calculations with low-temperature light-emission measurements identified the cause: interior layers of a thick stack compress, which shifts the electronic states that set the gap. The calculated thickness of the switch depends strongly on the level of theory, and the two higher-level methods (6.7 nm and 4.3 nm) bracket the experimental value of about 5 nm. <a href="inse-bandgap-transition.html">Read the detailed explanation</a>.</p>
-      <p>Atomically thin crystals can also change the color of light. In second-harmonic generation, a material converts light of one frequency into light of exactly twice that frequency, an effect that requires a crystal lacking a certain symmetry, as single-layer transition-metal dichalcogenides do. Measured values vary widely, so a 2021 study calculated the response from first principles for nine monolayers. The calculated peak positions agree with experiment to about 8% on average, the strongest responses occur in materials with small band gaps (the vanadium compounds), and the magnitudes are comparable to those of bulk crystals used in devices today, which suggests that much thinner components may be possible. <a href="tmd-nonlinear-optics.html">Read the detailed explanation</a>.</p>
+      <p>A 2024 study combining quantum-mechanical calculations with low-temperature light-emission measurements identified the cause: interior layers of a thick stack compress, which shifts the electronic states that set the gap. The calculated thickness of the switch depends strongly on the level of theory, and the two higher-level methods (6.7 nm and 4.3 nm) bracket the experimental value of about 5 nm. <a href="research/inse-bandgap-transition/">Read the detailed explanation</a>.</p>
+      <p>Atomically thin crystals can also change the color of light. In second-harmonic generation, a material converts light of one frequency into light of exactly twice that frequency, an effect that requires a crystal lacking a certain symmetry, as single-layer transition-metal dichalcogenides do. Measured values vary widely, so a 2021 study calculated the response from first principles for nine monolayers. The calculated peak positions agree with experiment to about 8% on average, the strongest responses occur in materials with small band gaps (the vanadium compounds), and the magnitudes are comparable to those of bulk crystals used in devices today, which suggests that much thinner components may be possible. <a href="research/tmd-nonlinear-optics/">Read the detailed explanation</a>.</p>
     </div>
   </details>
 
-  <details>
+  <details id="software">
     <summary><span><h3>Open-source software: Raman spectra from ABINIT output</h3><small>Personal project, MIT license</small></span></summary>
     <div class="body">
       <p>A Raman spectrum records how light scatters from a material’s vibrations. ABINIT’s anaddb program calculates the underlying tensors, but its text output must still be converted into spectra. Raman_spec is a small Python tool that does so, producing per-mode intensities, polarization-resolved channels, depolarization ratios, and a broadened spectrum ready for plotting.</p>
-      <p>It was checked against an ABINIT calculation on wurtzite aluminum nitride (AlN), reproducing ABINIT’s own tensor invariants and giving calculated frequencies within about 5% of experiment. <a href="raman-spectra-tool.html">Read the detailed explanation</a> or <a href="https://github.com/Rusticmars/Raman_Spectra" rel="noopener">view the code on GitHub</a>.</p>
+      <p>It was checked against an ABINIT calculation on wurtzite aluminum nitride (AlN), reproducing ABINIT’s own tensor invariants and giving calculated frequencies within about 5% of experiment. <a href="software/raman-spectra/">Read the detailed explanation</a> or <a href="https://github.com/Rusticmars/Raman_Spectra" rel="noopener">view the code on GitHub</a>.</p>
     </div>
   </details>
 </section>
@@ -118,10 +120,10 @@
   <h2>Selected publications</h2>
   <p class="intro">Nine of more than twenty papers, including four from the doctoral work (the last four listed). A complete list, or a copy of any paper, is available <a href="#contact">on request</a>.</p>
   <ul class="pubs">
-    <li><b>N.A. Pike</b>, R. Pachter, W.J. Kennedy, N. Glavin. “Understanding the Structure and Polarization in Ferroelectric AlScN, ScGaN, and AlScGaN from First-Principles Calculations.” <em>Physical Review B</em> 112, 085204 (2025). <a href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">View at the publisher</a> or <a href="alscn-ferroelectrics.html">read the detailed explanation</a>.</li>
-    <li><b>N.A. Pike</b>, R. Pachter, et al. “Understanding the Origin and Implication of the Indirect-to-Direct Bandgap Transition in Multilayer InSe.” <em>The Journal of Physical Chemistry C</em> 128, 7957–7967 (2024). <a href="https://doi.org/10.1021/acs.jpcc.4c01104" rel="noopener">View at the publisher</a> or <a href="inse-bandgap-transition.html">read the detailed explanation</a>.</li>
-    <li><b>N.A. Pike</b>, R. Pachter. “Second-Order Nonlinear Optical Properties of Monolayer Transition-Metal Dichalcogenides by Computational Analysis.” <em>The Journal of Physical Chemistry C</em> 125, 11075–11084 (2021). <a href="https://doi.org/10.1021/acs.jpcc.1c02380" rel="noopener">View at the publisher</a> or <a href="tmd-nonlinear-optics.html">read the detailed explanation</a>.</li>
-    <li>A.H. Romero, D.C. Allan, B. Amadon, et al., including <b>N.A. Pike</b>. “ABINIT: Overview and Focus on Selected Capabilities.” <em>The Journal of Chemical Physics</em> 152, 124102 (2020). <a href="https://doi.org/10.1063/1.5144261" rel="noopener">View at the publisher</a> or <a href="abinit-overview.html">read the detailed explanation</a>.</li>
+    <li><b>N.A. Pike</b>, R. Pachter, W.J. Kennedy, N. Glavin. “Understanding the Structure and Polarization in Ferroelectric AlScN, ScGaN, and AlScGaN from First-Principles Calculations.” <em>Physical Review B</em> 112, 085204 (2025). <a href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">View at the publisher</a> or <a href="research/alscn-ferroelectrics/">read the detailed explanation</a>.</li>
+    <li><b>N.A. Pike</b>, R. Pachter, et al. “Understanding the Origin and Implication of the Indirect-to-Direct Bandgap Transition in Multilayer InSe.” <em>The Journal of Physical Chemistry C</em> 128, 7957–7967 (2024). <a href="https://doi.org/10.1021/acs.jpcc.4c01104" rel="noopener">View at the publisher</a> or <a href="research/inse-bandgap-transition/">read the detailed explanation</a>.</li>
+    <li><b>N.A. Pike</b>, R. Pachter. “Second-Order Nonlinear Optical Properties of Monolayer Transition-Metal Dichalcogenides by Computational Analysis.” <em>The Journal of Physical Chemistry C</em> 125, 11075–11084 (2021). <a href="https://doi.org/10.1021/acs.jpcc.1c02380" rel="noopener">View at the publisher</a> or <a href="research/tmd-nonlinear-optics/">read the detailed explanation</a>.</li>
+    <li>A.H. Romero, D.C. Allan, B. Amadon, et al., including <b>N.A. Pike</b>. “ABINIT: Overview and Focus on Selected Capabilities.” <em>The Journal of Chemical Physics</em> 152, 124102 (2020). <a href="https://doi.org/10.1063/1.5144261" rel="noopener">View at the publisher</a> or <a href="research/abinit-overview/">read the detailed explanation</a>.</li>
     <li><b>N.A. Pike</b>, O.M. Løvvik. “Calculation of the Anisotropic Coefficients of Thermal Expansion: A First-Principles Approach.” <em>Computational Materials Science</em> 167, 257–263 (2019).</li>
     <li><b>N.A. Pike</b>, D. Stroud. “Plasmonic Waves on a Chain of Metallic Nanoparticles: Effects of a Liquid-Crystalline Host.” <em>Journal of the Optical Society of America B</em> 30, 1127 (2013).</li>
     <li><b>N.A. Pike</b>, D. Stroud. “Tight-Binding Model of Adatoms on Graphene: Analytic Density of States, Spectral Function, and Induced Magnetic Moment.” <em>Physical Review B</em> 89, 115428 (2014).</li>
@@ -163,6 +165,7 @@
   </form>
 </section>
 
+</main>
 <footer>Member, American Physical Society and Materials Research Society. Explanations on this site are written for a general audience and simplify the underlying physics.</footer>
 </div>
 <script src="assets/form.js"></script>

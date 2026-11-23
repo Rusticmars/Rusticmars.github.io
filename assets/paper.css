@@ -1,7 +1,6 @@
 /* Paper (detailed explanation) pages only */
 body{line-height:1.7}
 .wrap{max-width:44rem}
-.back{display:inline-block;padding:1.25rem 0;font:600 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none}
 h1{font-size:clamp(2rem,6vw,3rem);line-height:1.1;margin:.5rem 0 .75rem;letter-spacing:-.02em}
 .cite{font:.92rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted);margin:0 0 1.25rem}
 .btns{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 2rem}

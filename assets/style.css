@@ -30,3 +30,11 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-of
 .req button{justify-self:start;border:0;cursor:pointer}
 .req button:disabled{opacity:.6;cursor:default}
 .req .status{margin:0;font:.95rem/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--muted)}
+
+/* Site navigation and skip link (every page) */
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--accent-ink);padding:.6rem 1rem;border-radius:0 0 6px 0;font:600 .9rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;z-index:10}
+.skip:focus{left:0}
+.site-nav{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;padding:1.25rem 0;font:600 .9rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+.site-nav a{color:var(--muted);text-decoration:none}
+.site-nav a:hover,.site-nav a[aria-current]{color:var(--accent)}
+.site-nav .home{color:var(--ink);margin-right:auto}
