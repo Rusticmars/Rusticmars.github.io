@@ -5,7 +5,7 @@ lang: en
 
 # Leave empty when the site is served at the root of its domain (username.github.io).
 # For a project site served at username.github.io/repo-name, set this to "/repo-name".
-baseurl: ""
+baseurl: "/Website"
 
 # Public access key for the request form (Web3Forms). It only delivers to the address registered with the service.
 web3forms_access_key: "27a0e836-99df-4589-aebd-900f647e8ccb"
