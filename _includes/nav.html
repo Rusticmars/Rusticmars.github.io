@@ -1,0 +1,8 @@
+<nav class="site-nav" aria-label="Primary">
+{% if page.layout == "paper" %}  <a class="home" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+{% endif %}  <a href="{{ '/#research' | relative_url }}"{% if page.collection == "research" %} aria-current="page"{% endif %}>Research</a>
+  <a href="{{ '/#software' | relative_url }}"{% if page.collection == "software" %} aria-current="page"{% endif %}>Software</a>
+  <a href="{{ '/#publications' | relative_url }}">Publications</a>
+  <a href="{{ '/#path' | relative_url }}">Career</a>
+  <a href="{{ '/#contact' | relative_url }}">Contact</a>
+</nav>

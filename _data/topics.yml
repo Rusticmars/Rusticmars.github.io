@@ -1,0 +1,83 @@
+# One entry per research topic shown on the overview page.
+# "page" (optional) links to a detailed explanation; "external" adds a second link.
+- theme: ferroelectrics
+  title: Designing better ferroelectric nitrides
+  where: Air Force Research Laboratory, 2025
+  body: |
+    <p>A ferroelectric material has a built-in electric polarization that can be flipped by applying a voltage. Because the flipped state persists without power, ferroelectrics are candidates for non-volatile memory. Compounds of aluminum, scandium, gallium, and nitrogen are of particular interest, but the voltage needed to flip them (the coercive field) is relatively high, and lowering it would allow lower-power switching.</p>
+    <p>Using more than 2,000 first-principles calculations, a 2025 study predicted where these crystals change structure as the mixture is varied, to within a few percent of experiment for the two-metal alloys. It also mapped the four-element alloy and identified a region of compositions with strong polarization (near 100 µC/cm²) and a reduced coercive field (at or below about 5 MV/cm), as a guide for experimental growth. The calculated coercive field for the one composition that can be checked against experiment was higher than measured, so the maps indicate trends rather than exact values.</p>
+  page: /research/alscn-ferroelectrics/
+  external:
+    url: https://doi.org/10.1103/ngv8-vq2k
+    label: view the paper at the publisher
+- theme: optics
+  title: Indirect-to-direct bandgap switching in indium selenide
+  where: Air Force Research Laboratory, 2024
+  body: |
+    <p>Optoelectronic materials interact with light to produce or respond to electrical signals. Whether the gap between a material’s electron energy levels is “direct” or “indirect” strongly affects how efficiently it can emit or absorb light. In the layered semiconductor indium selenide (InSe), the gap switches from indirect to direct as layers are added.</p>
+    <p>A 2024 study combining quantum-mechanical calculations with low-temperature light-emission measurements identified the cause: interior layers of a thick stack compress, which shifts the electronic states that set the gap. The calculated thickness of the switch depends strongly on the level of theory, and the two higher-level methods (6.7 nm and 4.3 nm) bracket the experimental value of about 5 nm.</p>
+  page: /research/inse-bandgap-transition/
+- theme: optics
+  title: Second-harmonic generation in atomically thin crystals
+  where: Air Force Research Laboratory, 2021
+  body: |
+    <p>Atomically thin crystals can also change the color of light. In second-harmonic generation, a material converts light of one frequency into light of exactly twice that frequency, an effect that requires a crystal lacking a certain symmetry, as single-layer transition-metal dichalcogenides do. Measured values vary widely, so a 2021 study calculated the response from first principles for nine monolayers. The calculated peak positions agree with experiment to about 8% on average, the strongest responses occur in materials with small band gaps (the vanadium compounds), and the magnitudes are comparable to those of bulk crystals used in devices today, which suggests that much thinner components may be possible.</p>
+  page: /research/tmd-nonlinear-optics/
+- theme: optics
+  title: Atomically thin crystals and how they interact with light
+  where: University of Liège, 2015 to 2017
+  body: |
+    <p>Transition-metal dichalcogenides (TMDs) are layered crystals that can be separated into sheets a single layer thick. Their properties change markedly between one layer and many.</p>
+    <p>This work used first-principles calculations to determine their dielectric and vibrational properties, and extended the open-source ABINIT software so that it can analyze Raman spectra (the pattern of light scattered by a material’s vibrations, which serves as a fingerprint of its structure) and nonlinear optical properties.</p>
+- theme: optics
+  title: Guiding light along chains of metal particles
+  where: The Ohio State University, doctoral research
+  body: |
+    <p>Electrons in a metal can slosh collectively in response to light. At a metal surface, this collective motion is called a surface plasmon. When metal nanoparticles are arranged in a chain, plasmons can travel along it.</p>
+    <p>A dispersion relation describes how the frequency of such a wave depends on its wavelength, and therefore how a signal propagates. Here, the chain was placed in a liquid crystal, an anisotropic medium whose molecules share a common orientation, so that light interacts differently depending on direction. The calculations show that the host’s orientation changes the plasmon dispersion relations.</p>
+    <p>Because the orientation of a liquid crystal responds to an applied electric field, the propagation could in principle be tuned electrically, which suggests uses such as filters for plasmonic signals. With a static magnetic field added, the calculations indicate that the chain may act as a non-reciprocal waveguide, one that permits propagation in only one direction at certain frequencies.</p>
+    <p>The model considered only nearest-neighbor coupling between particles, omitted radiative damping, and assumed a uniform liquid crystal orientation.</p>
+- theme: magnetism
+  title: Magnetism in graphene
+  where: The Ohio State University, doctoral research
+  body: |
+    <p>Graphene is a sheet of carbon one atom thick. Pure graphene is not magnetic. The question studied here was what happens when a small number of foreign atoms, called adatoms, sit on its surface.</p>
+    <p>Using a tight-binding model (a simplified quantum description in which electrons hop between neighboring atoms), the adatom’s effect on the available electron states could be calculated analytically rather than only numerically. The calculations show that the adatom transfers a substantial fraction of an electron to the graphene, approximately 70% for parameters appropriate to hydrogen.</p>
+    <p>Including the repulsion between electrons on the adatom, the model predicts a threshold: above a critical interaction strength, electrons of one spin direction are favored near the adatom and a net magnetic moment forms. Because graphene’s electron density can be changed with a gate voltage, this moment can be tuned, and in principle switched on and off, by an applied voltage.</p>
+    <p>The treatment uses a mean-field approximation, which captures the qualitative picture but not every detail of the magnetism. Lattice distortions and spin-orbit effects were identified as natural extensions.</p>
+- theme: magnetism
+  title: Heat, spin, and transport
+  where: The Ohio State University, doctoral research
+  body: |
+    <p>Electrons carry spin as well as charge. The Seebeck effect converts a temperature difference into an electrical voltage; its spin-dependent counterpart relates heat flow to a flow of spin. Such effects belong to spintronics, the effort to build devices that use spin to process or store information.</p>
+    <p>The material studied was indium antimonide (InSb), a semiconductor. In a strong magnetic field, electron energies split into discrete Landau levels. Experiments on electron-doped InSb had found oscillations in spin transport far larger than previously seen in semiconductors. A simple model, combining Landau levels with the Zeeman energy of spin in a field and a Boltzmann transport treatment, shows that the spin-dependent Seebeck coefficient oscillates with magnetic field each time the Fermi energy crosses the bottom of a Landau subband, giving qualitatively correct predictions.</p>
+    <p>Calculations were carried out at low temperature (about 4.5 K). Including spin-orbit interaction was proposed as the route to a transverse spin Seebeck effect.</p>
+- theme: thermal
+  title: How materials respond to temperature
+  where: University of Oslo, 2017 to 2019
+  body: |
+    <p>Most calculations describe a material at absolute zero. Real devices operate at finite temperature, where atoms vibrate and structures can change.</p>
+    <p>Two problems were addressed: solid-state phase transitions in shape-memory alloys, which are metals that return to a prior shape when heated because their crystal structure switches between two forms, and a first-principles method for the anisotropic coefficients of thermal expansion. “Anisotropic” means that a crystal can expand by different amounts along different directions.</p>
+- theme: software
+  title: 'The method: predicting materials from first principles'
+  where: Methodology used throughout
+  body: |
+    <p>The properties of a solid, such as whether it conducts electricity, how it responds to light, or how it expands when heated, are set by its electrons. Density functional theory (DFT) is a way of solving the quantum mechanics of those electrons efficiently enough to run on a supercomputer.</p>
+    <p>“First principles” means the calculation starts from the identity and arrangement of the atoms and the laws of physics, rather than from measurements made on the material. This makes it possible to study materials that have not yet been synthesized.</p>
+    <p>Large studies can require thousands of such calculations. At the Air Force Research Laboratory, a Python framework called DFTCONTROL was designed to manage that workload on high-performance computing systems, handling data generation, a results database, error recovery, and analysis. One published study alone relied on more than 2,000 calculations managed this way.</p>
+- theme: software
+  title: ABINIT, an open-source electronic-structure code
+  where: Community project, 2020
+  body: |
+    <p>ABINIT is a free, open-source program that computes the properties of materials from quantum mechanics. It is described in a 2020 community overview paper with 43 authors, of whom Nicholas A. Pike is one.</p>
+  page: /research/abinit-overview/
+- theme: software
+  title: 'Raman_spec: Raman spectra from ABINIT output'
+  where: Personal project, MIT license
+  body: |
+    <p>A Raman spectrum records how light scatters from a material’s vibrations. ABINIT’s anaddb program calculates the underlying tensors, but its text output must still be converted into spectra. Raman_spec is a small Python tool that does so, producing per-mode intensities, polarization-resolved channels, depolarization ratios, and a broadened spectrum ready for plotting.</p>
+    <p>It was checked against an ABINIT calculation on wurtzite aluminum nitride (AlN), reproducing ABINIT’s own tensor invariants and giving calculated frequencies within about 5% of experiment.</p>
+  page: /software/raman-spectra/
+  external:
+    url: https://github.com/Rusticmars/Raman_Spectra
+    label: view the code on GitHub

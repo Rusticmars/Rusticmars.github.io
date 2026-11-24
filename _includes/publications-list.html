@@ -1,0 +1,3 @@
+<ul class="pubs">
+{% for pub in site.data.publications %}    <li>{{ pub.citation }}{% if pub.doi or pub.page %} {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" rel="noopener">View at the publisher</a>{% endif %}{% if pub.doi and pub.page %} or <a href="{{ pub.page | relative_url }}">read the detailed explanation</a>{% elsif pub.page %}<a href="{{ pub.page | relative_url }}">Read the detailed explanation</a>{% endif %}.{% endif %}</li>
+{% endfor %}  </ul>

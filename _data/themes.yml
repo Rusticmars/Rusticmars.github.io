@@ -1,0 +1,16 @@
+# Research themes, in display order. Topics (topics.yml) refer to a theme by id.
+- id: ferroelectrics
+  title: Ferroelectrics and memory
+  sub: Switchable polarization for low-power memory
+- id: optics
+  title: Light and optical properties
+  sub: Atomically thin crystals, nonlinear optics, and nanoscale light guiding
+- id: magnetism
+  title: Magnetism and spin transport
+  sub: Spin, charge, and heat in graphene and semiconductors
+- id: thermal
+  title: Thermal and structural properties
+  sub: Expansion, phase transitions, and temperature effects
+- id: software
+  title: Computational methods and software
+  sub: First-principles methods, ABINIT, and open-source tools

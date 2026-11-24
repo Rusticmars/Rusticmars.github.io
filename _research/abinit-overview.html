@@ -1,0 +1,57 @@
+---
+full_title: "ABINIT: an open-source engine for predicting what materials do | Nicholas A. Pike"
+description: "A plain-language explanation of the ABINIT electronic-structure software and its capabilities, from a 2020 community overview paper."
+headline: "ABINIT: an open-source engine for predicting what materials do"
+citation: |-
+  A.H. Romero, D.C. Allan, B. Amadon, et al., including N.A. Pike (43 authors in total). “ABINIT: Overview and Focus on Selected Capabilities.” <em>The Journal of Chemical Physics</em> 152, 124102 (2020).
+doi: "10.1063/1.5144261"
+request_title: "ABINIT: Overview and Focus on Selected Capabilities (J. Chem. Phys., 2020)"
+short_title: "ABINIT: Overview and focus on selected capabilities (J. Chem. Phys., 2020)"
+order: 4
+footer_note: |-
+  Published in <em>The Journal of Chemical Physics</em> 152, 124102 (2020). This page is an explanatory summary for general readers; the paper is the authoritative account.
+---
+<p class="brief"><b>In brief.</b> ABINIT is a free, open-source program that computes the properties of materials from quantum mechanics. This paper is a community overview of the software: its history, what it can calculate, and a selection of capabilities that few comparable programs offer. The calculations behind several other pages on this site were carried out with it.</p>
+
+<h2>1. Background</h2>
+<h3>What electronic-structure software does</h3>
+<p>The properties of a solid follow from the behavior of its electrons. Electronic-structure programs solve the quantum-mechanical equations for those electrons, most often using density functional theory (DFT), so that properties such as how a crystal conducts, vibrates, responds to light, or deforms under stress can be predicted from the atoms alone. ABINIT represents the electrons’ wave functions with plane waves (a periodic, wave-like basis suited to crystals), and replaces the tightly bound inner electrons of each atom with pseudopotentials or projector-augmented waves (PAW), which are simplified descriptions that make the calculation tractable. Molecules and nanostructures can also be treated, by placing them in a periodically repeated box.</p>
+<h3>The project</h3>
+<p>The code traces back to work in the late 1980s at Corning Incorporated and Cornell University, where Douglas Allan, supervised by Michael Teter, wrote an early plane-wave program. Xavier Gonze joined in 1990 and added density functional perturbation theory (DFPT), a method for computing how a material responds to small disturbances. In 1996 Gonze and Allan decided to create a freely licensed code, which was named ABINIT in September 1998, and the first public release under the GNU General Public License followed in December 1999. Today the code is developed by a community of around 50 people overseen by an international advisory committee. It is documented in detail, with more than 800 worked examples, a user forum, and regular schools and workshops.</p>
+<h3>Reach</h3>
+<p>A bibliometric count in December 2019 found 5,125 citations of the main ABINIT papers since 2002, of which 3,995 were unique, averaging more than 250 per year since 2011, from authors in 84 countries and more than 2,000 institutions.</p>
+
+<h2>2. Selected capabilities</h2>
+<p>The paper first lists ABINIT’s capabilities alphabetically, with links to documentation, and then examines those that are uncommon among similar programs. Examples include:</p>
+<div class="scroll-x"><table>
+<caption>A selection of the capabilities described in the paper. “DFPT” denotes density functional perturbation theory.</caption>
+<thead><tr><th>Capability</th><th>What it provides</th></tr></thead>
+<tbody>
+<tr><td>Strongly correlated materials (DMFT)</td><td>Spectra and energies for materials with localized electrons, such as cerium, where ordinary DFT is inadequate</td></tr>
+<tr><td>Finite electric fields and polarization</td><td>Polarization of ferroelectrics and responses to applied fields, via the modern theory of polarization</td></tr>
+<tr><td>Nuclear properties</td><td>Mössbauer isomer shifts and electric field gradients, observable in spectroscopy</td></tr>
+<tr><td>Positron annihilation</td><td>Positron lifetimes and momentum distributions, used to identify defects in solids</td></tr>
+<tr><td>Raman and electro-optic effects</td><td>Raman intensities and the electro-optic tensor from third-order DFPT</td></tr>
+<tr><td>Strain responses</td><td>Elastic and piezoelectric tensors, including a treatment of van der Waals forces</td></tr>
+<tr><td>Flexoelectricity</td><td>Polarization induced by a strain gradient, computed for any insulating crystal</td></tr>
+<tr><td>Electron-phonon coupling</td><td>Temperature dependence of band gaps, zero-point renormalization, carrier mobilities</td></tr>
+<tr><td>Finite-temperature lattice dynamics (A-TDEP)</td><td>Phonons and thermodynamic properties beyond the harmonic approximation</td></tr>
+<tr><td>Magnetism</td><td>Responses of non-collinear magnets, and magnetic susceptibility</td></tr>
+<tr><td>Optical spectra with excitons</td><td>Bethe-Salpeter calculations of absorption, including temperature dependence</td></tr>
+</tbody></table></div>
+
+<h3>Spotlight: Raman spectroscopy</h3>
+<p>Raman spectroscopy measures how light scatters inelastically from the vibrations of a material, giving a fingerprint of its structure. In ABINIT, the intensity of a Raman line is obtained from the Raman tensor, which describes how the material’s electrical susceptibility changes as the atoms move. This is a third derivative of the energy, which the 2n+1 theorem allows to be computed from first-order responses at little additional cost:</p>
+<div class="eq">∂χ<sup>(1)</sup><sub>ij</sub> / ∂τ<sub>κβ</sub> = −(1/Ω<sub>0</sub>) ∂³E / (∂τ<sub>κβ</sub> ∂ℰ<sub>i</sub> ∂ℰ<sub>j</sub>), &nbsp; α<sup>m</sup><sub>ij</sub> = Σ<sub>κ,β</sub> (∂χ<sup>(1)</sup><sub>ij</sub> / ∂τ<sub>κβ</sub>) u<sub>m</sub>(κβ) &nbsp;&nbsp;(1)<small>χ<sup>(1)</sup><sub>ij</sub>: linear electric susceptibility (dimensionless in SI units of ε<sub>0</sub>); τ<sub>κβ</sub>: displacement of atom κ along direction β (Å); Ω<sub>0</sub>: unit-cell volume (Å³); E: total energy (eV); ℰ: electric field; α<sup>m</sup><sub>ij</sub>: Raman tensor of vibrational mode m; u<sub>m</sub>(κβ): eigen-displacement of that mode. Placzek’s approximation is assumed, and the formulation applies in the non-resonant regime.</small></div>
+<p>Scripts distributed with ABINIT convert these tensors into polarization-dependent and powder-averaged Raman spectra. Calculated spectra have been compared with experiment for oxides, organic compounds, and transition-metal dichalcogenides, and the paper cites the author’s own studies of those layered crystals as an example (see <a href="../tmd-nonlinear-optics/">the nonlinear-optics page</a> for a related study carried out with ABINIT). An open-source tool that turns ABINIT’s Raman output into spectra is described on <a href="../../software/raman-spectra/">its own page</a>.</p>
+
+<h2>3. Community projects</h2>
+<p><b>Atomic data.</b> The community distributes validated sets of atomic data: the JTH table of PAW data for 86 elements, and PseudoDojo, which offers standard and stringent pseudopotential sets whose convergence hints support automated workflows.</p>
+<p><b>High-throughput calculations.</b> Using the ABIPY and ABIFLOWS software to automate workflows, phonon spectra were computed for more than 2,000 materials and made available through the Materials Project. A second-harmonic-generation study had computed nonlinear properties for more than 400 of more than 800 candidate materials at the time of writing, and automated GW calculations had been applied to about 90 crystalline compounds.</p>
+<p><b>A shared library.</b> LIBPAW packages ABINIT’s PAW machinery so that other programs can reuse it. It has been integrated into at least two other codes, one using wavelets and one using Gaussian orbitals, which shows that it is independent of the underlying basis.</p>
+
+<h2>4. What this means</h2>
+<p>Predictions of material behavior are only as trustworthy as the software behind them. A freely available, openly developed, extensively tested code allows others to reproduce and build on published results, and allows new methods, such as those for Raman spectra and nonlinear optics, to be shared with the whole community rather than kept within one group.</p>
+
+<h2>5. Limitations</h2>
+<p>This is an overview of a large project, written by many authors, and it describes the software as of early 2020; some capabilities discussed were then available only in a forthcoming version, and the code has continued to develop since. Several implementations are restricted to certain pseudopotential types or exchange-correlation functionals, which the paper notes individually. This page summarizes selected parts of the paper only.</p>

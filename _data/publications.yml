@@ -1,0 +1,19 @@
+# Selected publications, in display order.
+# "doi" and "page" (a detailed explanation) are optional and generate the links.
+- citation: <b>N.A. Pike</b>, R. Pachter, W.J. Kennedy, N. Glavin. “Understanding the Structure and Polarization in Ferroelectric AlScN, ScGaN, and AlScGaN from First-Principles Calculations.” <em>Physical Review B</em> 112, 085204 (2025).
+  doi: 10.1103/ngv8-vq2k
+  page: /research/alscn-ferroelectrics/
+- citation: <b>N.A. Pike</b>, R. Pachter, et al. “Understanding the Origin and Implication of the Indirect-to-Direct Bandgap Transition in Multilayer InSe.” <em>The Journal of Physical Chemistry C</em> 128, 7957–7967 (2024).
+  doi: 10.1021/acs.jpcc.4c01104
+  page: /research/inse-bandgap-transition/
+- citation: <b>N.A. Pike</b>, R. Pachter. “Second-Order Nonlinear Optical Properties of Monolayer Transition-Metal Dichalcogenides by Computational Analysis.” <em>The Journal of Physical Chemistry C</em> 125, 11075–11084 (2021).
+  doi: 10.1021/acs.jpcc.1c02380
+  page: /research/tmd-nonlinear-optics/
+- citation: 'A.H. Romero, D.C. Allan, B. Amadon, et al., including <b>N.A. Pike</b>. “ABINIT: Overview and Focus on Selected Capabilities.” <em>The Journal of Chemical Physics</em> 152, 124102 (2020).'
+  doi: 10.1063/1.5144261
+  page: /research/abinit-overview/
+- citation: '<b>N.A. Pike</b>, O.M. Løvvik. “Calculation of the Anisotropic Coefficients of Thermal Expansion: A First-Principles Approach.” <em>Computational Materials Science</em> 167, 257–263 (2019).'
+- citation: '<b>N.A. Pike</b>, D. Stroud. “Plasmonic Waves on a Chain of Metallic Nanoparticles: Effects of a Liquid-Crystalline Host.” <em>Journal of the Optical Society of America B</em> 30, 1127 (2013).'
+- citation: '<b>N.A. Pike</b>, D. Stroud. “Tight-Binding Model of Adatoms on Graphene: Analytic Density of States, Spectral Function, and Induced Magnetic Moment.” <em>Physical Review B</em> 89, 115428 (2014).'
+- citation: '<b>N.A. Pike</b>, D. Stroud. “Graphene with Adatoms: Tuning the Magnetic Moment with an Applied Voltage.” <em>Applied Physics Letters</em> 105, 052404 (2014).'
+- citation: <b>N.A. Pike</b>, D. Stroud. “Model of the Spin-Dependent Seebeck Coefficient of InSb in a Magnetic Field.” <em>Physical Review B</em> 90, 174435 (2014).

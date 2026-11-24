@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<h1>{{ page.headline }}</h1>
+<p class="cite">{{ page.citation }}</p>
+<div class="btns">
+{% if page.buttons %}{% for b in page.buttons %}  <a class="btn{% if b.alt %} alt{% endif %}" href="{% if b.url contains '://' %}{{ b.url }}{% else %}{{ b.url | relative_url }}{% endif %}"{% if b.url contains '://' %} rel="noopener"{% endif %}>{{ b.label }}</a>
+{% endfor %}{% else %}  <a class="btn" href="https://doi.org/{{ page.doi }}" rel="noopener">View the paper at the publisher (DOI)</a>
+  <a class="btn alt" href="#request">Request a copy</a>
+{% endif %}</div>
+
+{{ content }}
+{% if page.request_title %}{% include request-form.html title=page.request_title %}{% endif %}

@@ -1,0 +1,14 @@
+<h2 id="request">Request a copy</h2>
+<p>Enter your details and a copy of this paper will be sent to you. Details are used only to reply and are processed through the Web3Forms service.</p>
+<form class="req" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
+  <input type="hidden" name="subject" value="Paper request: {{ include.title }}">
+  <input type="hidden" name="paper" value="{{ include.title }}">
+  <input type="hidden" name="from_name" value="Personal website paper request">
+  <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+  <label>Name<input name="name" required autocomplete="name"></label>
+  <label>Email<input type="email" name="email" required autocomplete="email"></label>
+  <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
+  <button class="btn" type="submit">Send request</button>
+  <p class="status" role="status" aria-live="polite"></p>
+</form>

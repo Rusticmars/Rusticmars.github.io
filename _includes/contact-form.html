@@ -1,0 +1,12 @@
+<form class="req" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="{{ site.web3forms_access_key }}">
+    <input type="hidden" name="subject" value="Request from personal website">
+    <input type="hidden" name="from_name" value="Personal website">
+    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+    <label>Name<input name="name" required autocomplete="name"></label>
+    <label>Email<input type="email" name="email" required autocomplete="email"></label>
+    <label>Subject of the request<select name="paper"><option>General question</option>{% assign requestable = site.research | sort: "order" %}{% for p in requestable %}<option>{{ p.short_title }}</option>{% endfor %}<option>Another paper (please specify below)</option></select></label>
+    <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
+    <button class="btn" type="submit">Send</button>
+    <p class="status" role="status" aria-live="polite">Details are used only to reply and are processed through the Web3Forms service.</p>
+  </form>

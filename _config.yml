@@ -1,0 +1,28 @@
+# Site settings. Edit this file to change the site name, description, or hosting location.
+title: Nicholas A. Pike
+description: Research in condensed matter physics and first-principles materials modeling, explained for a general audience.
+lang: en
+
+# Leave empty when the site is served at the root of its domain (username.github.io).
+# For a project site served at username.github.io/repo-name, set this to "/repo-name".
+baseurl: ""
+
+# Public access key for the request form (Web3Forms). It only delivers to the address registered with the service.
+web3forms_access_key: "27a0e836-99df-4589-aebd-900f647e8ccb"
+
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
+  software:
+    output: true
+    permalink: /software/:name/
+
+defaults:
+  - scope: {path: "", type: "research"}
+    values: {layout: "paper", css: "paper", form: true}
+  - scope: {path: "", type: "software"}
+    values: {layout: "paper", css: "paper", form: false}
+
+exclude:
+  - README.md

@@ -1,0 +1,13 @@
+{% for theme in site.data.themes %}
+  <details id="{{ theme.id }}">
+    <summary><span><h3>{{ theme.title }}</h3><small>{{ theme.sub }}</small></span></summary>
+    <div class="body">
+{% for topic in site.data.topics %}{% if topic.theme == theme.id %}      <div class="topic">
+        <h4>{{ topic.title }}</h4>
+        <p class="where">{{ topic.where }}</p>
+        {{ topic.body }}{% if topic.page %}
+        <p><a href="{{ topic.page | relative_url }}">Read the detailed explanation</a>{% if topic.external %} or <a href="{{ topic.external.url }}" rel="noopener">{{ topic.external.label }}</a>{% endif %}.</p>{% endif %}
+      </div>
+{% endif %}{% endfor %}    </div>
+  </details>
+{% endfor %}

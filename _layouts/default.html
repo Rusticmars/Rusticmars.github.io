@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{% if page.full_title %}{{ page.full_title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/' | append: page.css | append: '.css' | relative_url }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+{% include nav.html %}
+<main id="main">
+{{ content }}
+</main>
+{% include footer.html %}
+</div>
+{% if page.form %}<script src="{{ '/assets/form.js' | relative_url }}"></script>{% endif %}
+</body>
+</html>

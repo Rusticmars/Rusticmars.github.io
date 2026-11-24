@@ -1,23 +1,34 @@
-# Personal physics website
+# Personal physics website (Jekyll)
 
-Static site for GitHub Pages.
+Built by GitHub Pages with Jekyll; no local software is needed.
 
-## Structure
+## Where things live
 
-- index.html: overview page
-- research/<paper>/index.html: detailed explanation of one paper (alscn-ferroelectrics, inse-bandgap-transition, tmd-nonlinear-optics, abinit-overview)
-- software/raman-spectra/index.html: page for the Raman post-processing tool
-- assets/: shared files (style.css for the common design, navigation, and form; home.css and paper.css for page-specific rules; form.js for the request form)
-- 404.html: shown for addresses that do not exist (its links assume the site is served at the root of its domain; see the comment inside the file)
-- Root-level files named after the old addresses (alscn-ferroelectrics.html and so on) are redirects to the new addresses; they can be deleted once no old links remain in use.
-
-No PDFs are hosted in this repository. Each paper page links to the publisher (DOI) and offers a "Request a copy" form (Web3Forms).
-
-## Deploying
-
-Upload the contents of this folder to the root of the repository, keeping the folders, then enable Pages (Settings, Pages, deploy from the main branch, root folder).
+- `_config.yml`: site name, description, hosting location (`baseurl`), form key, collections
+- `_data/`: content that appears in lists
+  - `themes.yml`: the research themes, in display order
+  - `topics.yml`: the topics shown under each theme on the overview page
+  - `publications.yml`: the selected publications list
+  - `career.yml`: the career timeline
+- `_research/`: one file per paper explanation (published at /research/<file name>/)
+- `_software/`: one file per software page (published at /software/<file name>/)
+- `_layouts/` and `_includes/`: shared page structure (navigation, footer, request forms)
+- `index.html`: the overview page's own text (introductions, hero, contact)
+- `assets/`: stylesheets and the form script
+- `404.html`: page shown for addresses that do not exist
+- Root files named after the old flat addresses (for example `alscn-ferroelectrics.html`) redirect to the new addresses; delete them once no old links are in use.
 
 ## Adding a paper
 
-1. Copy an existing folder under research/, rename it, and edit the text and the form's title fields.
-2. Add its summary, as a topic under the matching theme, to index.html (research themes: ferroelectrics, optics, magnetism, thermal, software), plus its entry in the publications list and the request drop-down.
+1. Copy an existing file in `_research/`, rename it (the file name becomes the address), and edit its front matter (title, citation, DOI, request title, short title, order) and its text.
+2. Add a topic to `_data/topics.yml` under the right theme. Set `page: /research/<file name>/` to add the "Read the detailed explanation" link.
+3. Add the paper to `_data/publications.yml`.
+
+The request drop-down on the overview page and the navigation update on their own.
+
+## Notes
+
+- Pages are plain HTML inside the files; there is no Markdown processing.
+- Do not type the characters `{{` or `{%` in page text, because Jekyll reads them as template code.
+- If the site is ever served from a sub-folder (username.github.io/repo-name), set `baseurl` in `_config.yml` to "/repo-name".
+- No PDFs are hosted. Each paper page links to the publisher (DOI) and offers a "Request a copy" form (Web3Forms).

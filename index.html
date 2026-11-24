@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nicholas A. Pike, Ph.D. | Physics, explained from the inside</title>
-<meta name="description" content="Research in condensed matter physics and first-principles materials modeling, explained for a general audience.">
-<link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/home.css">
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<div class="wrap">
-<nav class="site-nav" aria-label="Primary"><a href="#research">Research</a><a href="#software">Software</a><a href="#publications">Publications</a><a href="#path">Career</a><a href="#contact">Contact</a></nav>
-
-<main id="main">
+---
+layout: default
+css: home
+form: true
+full_title: "Nicholas A. Pike, Ph.D. | Physics, explained from the inside"
+description: "Research in condensed matter physics and first-principles materials modeling, explained for a general audience."
+footer_note: |-
+  Member, American Physical Society and Materials Research Society. Explanations on this site are written for a general audience and simplify the underlying physics.
+---
 <header class="hero">
   <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
     <defs>
@@ -38,132 +31,19 @@
   <h2>Research, in plain language</h2>
   <p class="intro">Research is grouped by theme. Each theme opens to its topics, each with a short explanation of the question being asked and why it matters. The common thread is a single idea: given only the atoms in a material, quantum theory can predict how that material will behave.</p>
   <p class="intro">The doctoral topics (magnetism in graphene, light guiding along nanoparticle chains, and spin transport) are the subject of the dissertation <em>Energy Dispersion, Magnetism, and Transport in Three Condensed Matter Systems</em> (The Ohio State University, 2015; advisor Prof. David Stroud).</p>
-
-    <details id="ferroelectrics">
-    <summary><span><h3>Ferroelectrics and memory</h3><small>Switchable polarization for low-power memory</small></span></summary>
-    <div class="body">
-      <div class="topic">
-        <h4>Designing better ferroelectric nitrides</h4>
-        <p class="where">Air Force Research Laboratory, 2025</p>
-        <p>A ferroelectric material has a built-in electric polarization that can be flipped by applying a voltage. Because the flipped state persists without power, ferroelectrics are candidates for non-volatile memory. Compounds of aluminum, scandium, gallium, and nitrogen are of particular interest, but the voltage needed to flip them (the coercive field) is relatively high, and lowering it would allow lower-power switching.</p>
-        <p>Using more than 2,000 first-principles calculations, a 2025 study predicted where these crystals change structure as the mixture is varied, to within a few percent of experiment for the two-metal alloys. It also mapped the four-element alloy and identified a region of compositions with strong polarization (near 100 µC/cm²) and a reduced coercive field (at or below about 5 MV/cm), as a guide for experimental growth. The calculated coercive field for the one composition that can be checked against experiment was higher than measured, so the maps indicate trends rather than exact values.</p>
-        <p><a href="research/alscn-ferroelectrics/">Read the detailed explanation</a> or <a href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">view the paper at the publisher</a>.</p>
-      </div>
-    </div>
-  </details>
-  <details id="optics">
-    <summary><span><h3>Light and optical properties</h3><small>Atomically thin crystals, nonlinear optics, and nanoscale light guiding</small></span></summary>
-    <div class="body">
-      <div class="topic">
-        <h4>Indirect-to-direct bandgap switching in indium selenide</h4>
-        <p class="where">Air Force Research Laboratory, 2024</p>
-        <p>Optoelectronic materials interact with light to produce or respond to electrical signals. Whether the gap between a material’s electron energy levels is “direct” or “indirect” strongly affects how efficiently it can emit or absorb light. In the layered semiconductor indium selenide (InSe), the gap switches from indirect to direct as layers are added.</p>
-        <p>A 2024 study combining quantum-mechanical calculations with low-temperature light-emission measurements identified the cause: interior layers of a thick stack compress, which shifts the electronic states that set the gap. The calculated thickness of the switch depends strongly on the level of theory, and the two higher-level methods (6.7 nm and 4.3 nm) bracket the experimental value of about 5 nm. <a href="research/inse-bandgap-transition/">Read the detailed explanation</a>.</p>
-      </div>
-      <div class="topic">
-        <h4>Second-harmonic generation in atomically thin crystals</h4>
-        <p class="where">Air Force Research Laboratory, 2021</p>
-        <p>Atomically thin crystals can also change the color of light. In second-harmonic generation, a material converts light of one frequency into light of exactly twice that frequency, an effect that requires a crystal lacking a certain symmetry, as single-layer transition-metal dichalcogenides do. Measured values vary widely, so a 2021 study calculated the response from first principles for nine monolayers. The calculated peak positions agree with experiment to about 8% on average, the strongest responses occur in materials with small band gaps (the vanadium compounds), and the magnitudes are comparable to those of bulk crystals used in devices today, which suggests that much thinner components may be possible. <a href="research/tmd-nonlinear-optics/">Read the detailed explanation</a>.</p>
-      </div>
-      <div class="topic">
-        <h4>Atomically thin crystals and how they interact with light</h4>
-        <p class="where">University of Liège, 2015 to 2017</p>
-        <p>Transition-metal dichalcogenides (TMDs) are layered crystals that can be separated into sheets a single layer thick. Their properties change markedly between one layer and many.</p>
-        <p>This work used first-principles calculations to determine their dielectric and vibrational properties, and extended the open-source ABINIT software so that it can analyze Raman spectra (the pattern of light scattered by a material’s vibrations, which serves as a fingerprint of its structure) and nonlinear optical properties.</p>
-      </div>
-      <div class="topic">
-        <h4>Guiding light along chains of metal particles</h4>
-        <p class="where">The Ohio State University, doctoral research</p>
-        <p>Electrons in a metal can slosh collectively in response to light. At a metal surface, this collective motion is called a surface plasmon. When metal nanoparticles are arranged in a chain, plasmons can travel along it.</p>
-        <p>A dispersion relation describes how the frequency of such a wave depends on its wavelength, and therefore how a signal propagates. Here, the chain was placed in a liquid crystal, an anisotropic medium whose molecules share a common orientation, so that light interacts differently depending on direction. The calculations show that the host’s orientation changes the plasmon dispersion relations.</p>
-        <p>Because the orientation of a liquid crystal responds to an applied electric field, the propagation could in principle be tuned electrically, which suggests uses such as filters for plasmonic signals. With a static magnetic field added, the calculations indicate that the chain may act as a non-reciprocal waveguide, one that permits propagation in only one direction at certain frequencies.</p>
-        <p>The model considered only nearest-neighbor coupling between particles, omitted radiative damping, and assumed a uniform liquid crystal orientation.</p>
-      </div>
-    </div>
-  </details>
-  <details id="magnetism">
-    <summary><span><h3>Magnetism and spin transport</h3><small>Spin, charge, and heat in graphene and semiconductors</small></span></summary>
-    <div class="body">
-      <div class="topic">
-        <h4>Magnetism in graphene</h4>
-        <p class="where">The Ohio State University, doctoral research</p>
-        <p>Graphene is a sheet of carbon one atom thick. Pure graphene is not magnetic. The question studied here was what happens when a small number of foreign atoms, called adatoms, sit on its surface.</p>
-        <p>Using a tight-binding model (a simplified quantum description in which electrons hop between neighboring atoms), the adatom’s effect on the available electron states could be calculated analytically rather than only numerically. The calculations show that the adatom transfers a substantial fraction of an electron to the graphene, approximately 70% for parameters appropriate to hydrogen.</p>
-        <p>Including the repulsion between electrons on the adatom, the model predicts a threshold: above a critical interaction strength, electrons of one spin direction are favored near the adatom and a net magnetic moment forms. Because graphene’s electron density can be changed with a gate voltage, this moment can be tuned, and in principle switched on and off, by an applied voltage.</p>
-        <p>The treatment uses a mean-field approximation, which captures the qualitative picture but not every detail of the magnetism. Lattice distortions and spin-orbit effects were identified as natural extensions.</p>
-      </div>
-      <div class="topic">
-        <h4>Heat, spin, and transport</h4>
-        <p class="where">The Ohio State University, doctoral research</p>
-        <p>Electrons carry spin as well as charge. The Seebeck effect converts a temperature difference into an electrical voltage; its spin-dependent counterpart relates heat flow to a flow of spin. Such effects belong to spintronics, the effort to build devices that use spin to process or store information.</p>
-        <p>The material studied was indium antimonide (InSb), a semiconductor. In a strong magnetic field, electron energies split into discrete Landau levels. Experiments on electron-doped InSb had found oscillations in spin transport far larger than previously seen in semiconductors. A simple model, combining Landau levels with the Zeeman energy of spin in a field and a Boltzmann transport treatment, shows that the spin-dependent Seebeck coefficient oscillates with magnetic field each time the Fermi energy crosses the bottom of a Landau subband, giving qualitatively correct predictions.</p>
-        <p>Calculations were carried out at low temperature (about 4.5 K). Including spin-orbit interaction was proposed as the route to a transverse spin Seebeck effect.</p>
-      </div>
-    </div>
-  </details>
-  <details id="thermal">
-    <summary><span><h3>Thermal and structural properties</h3><small>Expansion, phase transitions, and temperature effects</small></span></summary>
-    <div class="body">
-      <div class="topic">
-        <h4>How materials respond to temperature</h4>
-        <p class="where">University of Oslo, 2017 to 2019</p>
-        <p>Most calculations describe a material at absolute zero. Real devices operate at finite temperature, where atoms vibrate and structures can change.</p>
-        <p>Two problems were addressed: solid-state phase transitions in shape-memory alloys, which are metals that return to a prior shape when heated because their crystal structure switches between two forms, and a first-principles method for the anisotropic coefficients of thermal expansion. “Anisotropic” means that a crystal can expand by different amounts along different directions.</p>
-      </div>
-    </div>
-  </details>
-  <details id="software">
-    <summary><span><h3>Computational methods and software</h3><small>First-principles methods, ABINIT, and open-source tools</small></span></summary>
-    <div class="body">
-      <div class="topic">
-        <h4>The method: predicting materials from first principles</h4>
-        <p class="where">Methodology used throughout</p>
-        <p>The properties of a solid, such as whether it conducts electricity, how it responds to light, or how it expands when heated, are set by its electrons. Density functional theory (DFT) is a way of solving the quantum mechanics of those electrons efficiently enough to run on a supercomputer.</p>
-        <p>“First principles” means the calculation starts from the identity and arrangement of the atoms and the laws of physics, rather than from measurements made on the material. This makes it possible to study materials that have not yet been synthesized.</p>
-        <p>Large studies can require thousands of such calculations. At the Air Force Research Laboratory, a Python framework called DFTCONTROL was designed to manage that workload on high-performance computing systems, handling data generation, a results database, error recovery, and analysis. One published study alone relied on more than 2,000 calculations managed this way.</p>
-      </div>
-      <div class="topic">
-        <h4>ABINIT, an open-source electronic-structure code</h4>
-        <p class="where">Community project, 2020</p>
-        <p>ABINIT is a free, open-source program that computes the properties of materials from quantum mechanics. It is described in a 2020 community overview paper with 43 authors, of whom Nicholas A. Pike is one. <a href="research/abinit-overview/">Read the detailed explanation</a>.</p>
-      </div>
-      <div class="topic">
-        <h4>Raman_spec: Raman spectra from ABINIT output</h4>
-        <p class="where">Personal project, MIT license</p>
-        <p>A Raman spectrum records how light scatters from a material’s vibrations. ABINIT’s anaddb program calculates the underlying tensors, but its text output must still be converted into spectra. Raman_spec is a small Python tool that does so, producing per-mode intensities, polarization-resolved channels, depolarization ratios, and a broadened spectrum ready for plotting.</p>
-        <p>It was checked against an ABINIT calculation on wurtzite aluminum nitride (AlN), reproducing ABINIT’s own tensor invariants and giving calculated frequencies within about 5% of experiment. <a href="software/raman-spectra/">Read the detailed explanation</a> or <a href="https://github.com/Rusticmars/Raman_Spectra" rel="noopener">view the code on GitHub</a>.</p>
-      </div>
-    </div>
-  </details>
+{% include research-themes.html %}
 </section>
 
 <section id="publications">
   <h2>Selected publications</h2>
   <p class="intro">Nine of more than twenty papers, including four from the doctoral work (the last four listed). A complete list, or a copy of any paper, is available <a href="#contact">on request</a>.</p>
-  <ul class="pubs">
-    <li><b>N.A. Pike</b>, R. Pachter, W.J. Kennedy, N. Glavin. “Understanding the Structure and Polarization in Ferroelectric AlScN, ScGaN, and AlScGaN from First-Principles Calculations.” <em>Physical Review B</em> 112, 085204 (2025). <a href="https://doi.org/10.1103/ngv8-vq2k" rel="noopener">View at the publisher</a> or <a href="research/alscn-ferroelectrics/">read the detailed explanation</a>.</li>
-    <li><b>N.A. Pike</b>, R. Pachter, et al. “Understanding the Origin and Implication of the Indirect-to-Direct Bandgap Transition in Multilayer InSe.” <em>The Journal of Physical Chemistry C</em> 128, 7957–7967 (2024). <a href="https://doi.org/10.1021/acs.jpcc.4c01104" rel="noopener">View at the publisher</a> or <a href="research/inse-bandgap-transition/">read the detailed explanation</a>.</li>
-    <li><b>N.A. Pike</b>, R. Pachter. “Second-Order Nonlinear Optical Properties of Monolayer Transition-Metal Dichalcogenides by Computational Analysis.” <em>The Journal of Physical Chemistry C</em> 125, 11075–11084 (2021). <a href="https://doi.org/10.1021/acs.jpcc.1c02380" rel="noopener">View at the publisher</a> or <a href="research/tmd-nonlinear-optics/">read the detailed explanation</a>.</li>
-    <li>A.H. Romero, D.C. Allan, B. Amadon, et al., including <b>N.A. Pike</b>. “ABINIT: Overview and Focus on Selected Capabilities.” <em>The Journal of Chemical Physics</em> 152, 124102 (2020). <a href="https://doi.org/10.1063/1.5144261" rel="noopener">View at the publisher</a> or <a href="research/abinit-overview/">read the detailed explanation</a>.</li>
-    <li><b>N.A. Pike</b>, O.M. Løvvik. “Calculation of the Anisotropic Coefficients of Thermal Expansion: A First-Principles Approach.” <em>Computational Materials Science</em> 167, 257–263 (2019).</li>
-    <li><b>N.A. Pike</b>, D. Stroud. “Plasmonic Waves on a Chain of Metallic Nanoparticles: Effects of a Liquid-Crystalline Host.” <em>Journal of the Optical Society of America B</em> 30, 1127 (2013).</li>
-    <li><b>N.A. Pike</b>, D. Stroud. “Tight-Binding Model of Adatoms on Graphene: Analytic Density of States, Spectral Function, and Induced Magnetic Moment.” <em>Physical Review B</em> 89, 115428 (2014).</li>
-    <li><b>N.A. Pike</b>, D. Stroud. “Graphene with Adatoms: Tuning the Magnetic Moment with an Applied Voltage.” <em>Applied Physics Letters</em> 105, 052404 (2014).</li>
-    <li><b>N.A. Pike</b>, D. Stroud. “Model of the Spin-Dependent Seebeck Coefficient of InSb in a Magnetic Field.” <em>Physical Review B</em> 90, 174435 (2014).</li>
-  </ul>
+  {% include publications-list.html %}
 </section>
 
 <section id="path">
   <h2>Career path</h2>
   <p class="intro">From undergraduate physics in Michigan to applied simulation in industry.</p>
-  <ul class="tl">
-    <li><span class="yr">2025 to present</span><span><b>Software Engineer, Modeling and Simulation</b><br><span class="org">Rad-Con, Inc., Cleveland, Ohio. Temperature-dependent thermal models for industrial annealing furnaces, with reduced runtime relative to the prior model version.</span></span></li>
-    <li><span class="yr">2019 to 2025</span><span><b>Research Scientist and Engineer</b><br><span class="org">AeroVironment (formerly BlueHalo) at the U.S. Air Force Research Laboratory, Dayton, Ohio.</span></span></li>
-    <li><span class="yr">2017 to 2019</span><span><b>Postdoctoral Researcher</b><br><span class="org">University of Oslo, Norway.</span></span></li>
-    <li><span class="yr">2015 to 2017</span><span><b>Postdoctoral Researcher</b><br><span class="org">University of Liège, Belgium.</span></span></li>
-    <li><span class="yr">2009 to 2015</span><span><b>Ph.D. and M.S. in Physics; Lecturer</b><br><span class="org">The Ohio State University, Columbus. Dissertation: <em>Energy Dispersion, Magnetism, and Transport in Three Condensed Matter Systems</em>. Recipient of the Hazel Brown Teaching Award.</span></span></li>
-    <li><span class="yr">Through 2008</span><span><b>B.S. in Physics</b><br><span class="org">Grand Valley State University, Allendale, Michigan, where teaching and tutoring in physics began.</span></span></li>
-  </ul>
+  {% include career-timeline.html %}
   <p class="intro" style="margin-top:1rem">Teaching has been a constant: introductory physics recitations and laboratories, office hours, tutoring, and exam and lecture-material development for both algebra-based and calculus-based courses.</p>
 </section>
 
@@ -172,23 +52,6 @@
   <p class="intro">Questions about the research, or about physics more generally, are welcome.</p>
   <a class="btn" href="https://www.linkedin.com/in/nicholas-pike-physics/" rel="noopener">Connect on LinkedIn</a>
   <h3 style="margin-top:2rem">Request a paper or send a question</h3>
-  <form class="req" action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="27a0e836-99df-4589-aebd-900f647e8ccb">
-    <input type="hidden" name="subject" value="Request from personal website">
-    <input type="hidden" name="from_name" value="Personal website">
-    <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
-    <label>Name<input name="name" required autocomplete="name"></label>
-    <label>Email<input type="email" name="email" required autocomplete="email"></label>
-    <label>Subject of the request<select name="paper"><option>General question</option><option>Ferroelectric AlScN, ScGaN, and AlScGaN (Physical Review B, 2025)</option><option>Indirect-to-direct bandgap transition in multilayer InSe (J. Phys. Chem. C, 2024)</option><option>Nonlinear optical properties of monolayer TMDs (J. Phys. Chem. C, 2021)</option><option>Another paper (please specify below)</option></select></label>
-    <label>Message (optional)<textarea name="message" rows="3"></textarea></label>
-    <button class="btn" type="submit">Send</button>
-    <p class="status" role="status" aria-live="polite">Details are used only to reply and are processed through the Web3Forms service.</p>
-  </form>
+  {% include contact-form.html %}
 </section>
 
-</main>
-<footer>Member, American Physical Society and Materials Research Society. Explanations on this site are written for a general audience and simplify the underlying physics.</footer>
-</div>
-<script src="assets/form.js"></script>
-</body>
-</html>
